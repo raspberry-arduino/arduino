@@ -23,6 +23,16 @@
          :on-click  #(re-frame.core/dispatch [:request-data])}  ;; get data from the server !!
    "I want it, now!"])
 
+(defn sensor-table []
+  (let [data (re-frame/subscribe [::subs/data])
+        xx (println "rendering data: " @data)]
+    [:div
+     [:ul (for [topic @data]
+        [:li (get topic 0)
+         [:span {:style {:color "orange"}}
+            [:b ":   " (:valu (get topic 1))]  ]  ] )]
+     ]))
+
 
 (defn main-panel []
   (let [name (re-frame/subscribe [::subs/name])]
@@ -30,6 +40,7 @@
      [:h1 "Hello from " @name]
      [hello-component "TB"]
      [timer-component]
+     [sensor-table]
      [:p "the finest marijuana grown by arduino controlled hydroponics"]
      [request-data-button]
      ]))

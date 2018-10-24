@@ -61,5 +61,13 @@
   (set-topic :ph 10)
 
 
+  (map println (get-topics))
+
+  ; print keys
+  (map #(println (get % 0)) (get-topics))
+
+  (map #(println (get % 1)) (get-topics))
+
+
   ) ;********************************************************************
 

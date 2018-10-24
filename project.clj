@@ -24,6 +24,7 @@
                  ;Frontend
                  [reagent "0.7.0"]
                  [re-frame "0.10.5"]
+                 [cljs-ajax "0.7.3"]
 
 ]
 
