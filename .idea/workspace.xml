@@ -4,9 +4,6 @@
     <list default="true" id="8bc445c8-f39a-4b45-8a7a-8175bffcc74f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clj/arduino/mqtt.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/arduino/mqtt.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clj/arduino/web.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/arduino/web.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cljs/arduino/handlers.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/arduino/handlers.cljs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cljs/arduino/views.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/arduino/views.cljs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +23,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="clj" value="7" />
+          <entry key="clj" value="8" />
           <entry key="cljs" value="21" />
           <entry key="html" value="2" />
           <entry key="md" value="1" />
@@ -34,7 +31,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Clojure" value="7" />
+          <entry key="Clojure" value="8" />
           <entry key="ClojureScript" value="21" />
           <entry key="HTML" value="2" />
           <entry key="PLAIN_TEXT" value="1" />
@@ -42,66 +39,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="clj" value="2780" />
-          <entry key="cljs" value="1489" />
+          <entry key="clj" value="2811" />
+          <entry key="cljs" value="1508" />
           <entry key="html" value="73" />
           <entry key="md" value="321" />
-          <entry key="txt" value="35" />
+          <entry key="txt" value="71" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Clojure" value="2780" />
-          <entry key="ClojureScript" value="1489" />
+          <entry key="Clojure" value="2811" />
+          <entry key="ClojureScript" value="1508" />
           <entry key="HTML" value="73" />
-          <entry key="PLAIN_TEXT" value="356" />
+          <entry key="PLAIN_TEXT" value="392" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/views.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="957">
-              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/events.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/db.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/core.cljs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/handlers.cljs">
+        <entry file="file://$PROJECT_DIR$/src/clj/arduino/mqtt.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="928">
-              <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+            <state relative-caret-position="991">
+              <caret line="75" column="41" lean-forward="true" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -130,11 +91,11 @@
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/subs.cljs" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/db.cljs" />
-        <option value="$PROJECT_DIR$/src/clj/arduino/mqtt.clj" />
         <option value="$PROJECT_DIR$/src/clj/arduino/web.clj" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/core.cljs" />
-        <option value="$PROJECT_DIR$/src/cljs/arduino/views.cljs" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/handlers.cljs" />
+        <option value="$PROJECT_DIR$/src/cljs/arduino/views.cljs" />
+        <option value="$PROJECT_DIR$/src/clj/arduino/mqtt.clj" />
       </list>
     </option>
   </component>
@@ -207,7 +168,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540409018732" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540409305022" />
     <property name="cursive.last.file.extension./home/hoertlehner/Documents/arduino/src/clj" value="clj" />
     <property name="cursive.last.file.extension./home/hoertlehner/Documents/arduino/src/cljs" value="cljs" />
   </component>
@@ -216,7 +177,7 @@
       <recent name="$PROJECT_DIR$/src/clj/arduino" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1540408832734">{:repl-history {:ide [], :local [{:command &quot;(ns arduino.core\n  (:require my.ns\n           [samsara-mqtt.mqtt-server :as mqtt]\n           [com.stuartsierra.component :as component]\n           [reloaded.repl :refer\n            [set-init! system init start stop go reset]])\n  )&quot;, :offset 230, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:require [samsara-mqtt.mqtt-server :as mqtt]\n           [com.stuartsierra.component :as component]\n           [reloaded.repl :refer\n            [set-init! system init start stop go reset]])\n  )&quot;, :offset 213, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:gen-class)\n  (:require [clojurewerkz.machine-head.client :as mh]\n            ;[com.stuartsierra.component :as component]\n            [reloaded.repl :refer\n            ;         [set-init! system init start stop go reset]\n            ]))&quot;, :offset 257, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:require [clojurewerkz.machine-head.client :as mh]\n            ;[com.stuartsierra.component :as component]\n            [reloaded.repl :refer\n            ;         [set-init! system init start stop go reset]\n            ]))&quot;, :offset 242, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:require [clojurewerkz.machine-head.client :as mh]\n            ;[com.stuartsierra.component :as component]\n            ))&quot;, :offset 141, :ns &quot;user&quot;} {:command &quot;(defn demo [&amp; args]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {\&quot;hello\&quot; 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    (mh/publish conn \&quot;hello\&quot; \&quot;Hello, world\&quot;)))&quot;, :offset 387, :ns &quot;arduino.core&quot;} {:command &quot;(defn demo []\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {\&quot;hello\&quot; 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    (mh/publish conn \&quot;hello\&quot; \&quot;Hello, world\&quot;)))&quot;, :offset 381, :ns &quot;arduino.core&quot;} {:command &quot;(demo)&quot;, :offset 6, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe []\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {\&quot;hello\&quot; 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    ))&quot;, :offset 346, :ns &quot;arduino.core&quot;} {:command &quot;(defn publish []\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn \&quot;hello\&quot; \&quot;Hello, world\&quot;)))&quot;, :offset 126, :ns &quot;arduino.core&quot;} {:command &quot;(publish)&quot;, :offset 9, :ns &quot;arduino.core&quot;} {:command &quot;(defn publish [topic payload]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn topic payload)))&quot;, :offset 130, :ns &quot;arduino.core&quot;} {:command &quot;(publish \&quot;hello\&quot; \&quot;123\&quot;)&quot;, :offset 23, :ns &quot;arduino.core&quot;} {:command &quot;(subscribe)&quot;, :offset 11, :ns &quot;arduino.core&quot;} {:command &quot;(publish \&quot;hello\&quot; \&quot;1243\&quot;)&quot;, :offset 24, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    ))&quot;, :offset 349, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))))&quot;, :offset 344, :ns &quot;arduino.core&quot;} {:command &quot;(defn publish [topic payload]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn topic payload)\n    (println \&quot;published topic:\&quot; topic \&quot; payload:\&quot; payload)))&quot;, :offset 189, :ns &quot;arduino.core&quot;} {:command &quot;(publish \&quot;tb1\&quot; \&quot;1243\&quot;)&quot;, :offset 22, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                     (println \&quot;RCVD: \&quot; (String. payload \&quot;UTF-8\&quot;))\n                                   ; (mh/disconnect conn)\n                                   ;(System/exit 0)\n                                   ))))&quot;, :offset 388, :ns &quot;arduino.core&quot;} {:command &quot;(ns arduino.mqtt\n  (:require [clojurewerkz.machine-head.client :as mh]\n   ))&quot;, :offset 76, :ns &quot;user&quot;} {:command &quot;(defn publish [topic payload]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn topic payload)\n    (println \&quot;published topic:\&quot; topic \&quot; payload:\&quot; payload)\n    (mh/disconnect conn)))&quot;, :offset 214, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                   (println \&quot;RCVD: \&quot; (String. payload \&quot;UTF-8\&quot;))\n                                   ; (mh/disconnect conn)\n                                   ;(System/exit 0)\n                                   ))))&quot;, :offset 386, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn topics (atom {:test1 {:valu 13 :date nil :desc \&quot;Tiberius Test 1\&quot;}\n                    :ph    {:valu 7 :date nil :desc \&quot;PH of Water\&quot;}\n                    :test2 {:valu 123 :date nil :desc \&quot;Tiberius Test 2\&quot;}\n                    }))&quot;, :offset 235, :ns &quot;arduino.mqtt&quot;} {:command &quot;(atom {:a 3})&quot;, :offset 13, :ns &quot;arduino.mqtt&quot;} {:command &quot;(atom {:a 3 :b {:name \&quot;asdf\&quot;}})&quot;, :offset 31, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn topics (atom {:test1 {:valu 13  :desc \&quot;Tiberius Test 1\&quot;}\n                    :ph    {:valu 7   :desc \&quot;PH of Water\&quot;}\n                    :test2 {:valu 123 :desc \&quot;Tiberius Test 2\&quot;}\n                    }))&quot;, :offset 208, :ns &quot;arduino.mqtt&quot;} {:command &quot;(def topics (atom {:test1 {:valu 13  :desc \&quot;Tiberius Test 1\&quot;}\n                    :ph    {:valu 7   :desc \&quot;PH of Water\&quot;}\n                    :test2 {:valu 123 :desc \&quot;Tiberius Test 2\&quot;}\n                    }))&quot;, :offset 207, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn get-topics []\n  (@topics)\n  )&quot;, :offset 35, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn get-topics []\n  @topics\n  )&quot;, :offset 33, :ns &quot;arduino.mqtt&quot;} {:command &quot;(ns arduino.web\n  (:require\n\n    [schema.core :as s]\n\n    [ring.util.response :as response]\n    [ring.util.http-response :refer :all]\n    [ring.middleware.defaults :refer [wrap-defaults site-defaults]]\n    [ring.middleware.reload :refer [wrap-reload]]\n\n    [compojure.core :refer :all] ; [compojure.core :refer [defroutes routes]]\n    [compojure.route :as route]\n    [compojure.api.sweet :as sweet]\n    [cheshire.core :refer :all]\n\n    [arduino.mqtt :as mqtt]\n   ))&quot;, :offset 465, :ns &quot;user&quot;} {:command &quot;(ns arduino.web\n  (:require\n    [schema.core :as s]\n\n    [ring.util.response :as response]\n    [ring.util.http-response :refer :all]\n    [ring.middleware.defaults :refer [wrap-defaults site-defaults]]\n    [ring.middleware.reload :refer [wrap-reload]]\n\n    [compojure.core :refer :all] ; [compojure.core :refer [defroutes routes]]\n    [compojure.route :as route]\n    [compojure.api.sweet :as sweet]\n    [cheshire.core :refer :all]\n\n    [arduino.mqtt :as mqtt]\n   ))&quot;, :offset 464, :ns &quot;user&quot;} {:command &quot;(println \&quot;setting up routes..\&quot;)&quot;, :offset 31, :ns &quot;arduino.web&quot;} {:command &quot;(defn set-topic [topic payload]\n  (swap! topics assoc topic payload)\n  )&quot;, :offset 72, :ns &quot;arduino.mqtt&quot;} {:command &quot;(subscribe \&quot;tb1\&quot;)&quot;, :offset 17, :ns &quot;arduino.mqtt&quot;} {:command &quot;(publish \&quot;tb1\&quot; \&quot;12434\&quot;)&quot;, :offset 23, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn x {:test1 {:valu 1}})&quot;, :offset 27, :ns &quot;arduino.mqtt&quot;} {:command &quot;(def x {:test1 {:valu 1}})&quot;, :offset 26, :ns &quot;arduino.mqtt&quot;} {:command &quot;(assoc-in x [:test1 :valu] 15)&quot;, :offset 30, :ns &quot;arduino.mqtt&quot;} {:command &quot;(println x)&quot;, :offset 11, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn set-topic [topic payload]\n  (swap! topics assoc-in [topic :valu] payload)\n  )&quot;, :offset 83, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn set-topic\n  \&quot;updates the :valu\&quot;\n  [topic payload]\n  (swap! topics assoc-in [topic :valu :time (t/now) ] payload)\n  )&quot;, :offset 122, :ns &quot;arduino.mqtt&quot;} {:command &quot;(ns arduino.mqtt\n  (:require [clj-time.core :as t] \n            [clojurewerkz.machine-head.client :as mh]\n   ))&quot;, :offset 111, :ns &quot;user&quot;} {:command &quot;(defn set-topic\n  \&quot;updates the :valu\&quot;\n  [topic payload]\n  (swap! topics assoc-in [topic :valu ] payload)\n  (swap! topics assoc-in [topic :time ] (t/now))\n  )&quot;, :offset 157, :ns &quot;arduino.mqtt&quot;} {:command &quot;(set-topic :ph 9)&quot;, :offset 17, :ns &quot;arduino.mqtt&quot;} {:command &quot;(set-topic :ph 10)&quot;, :offset 18, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn do-action\n  \&quot;tell sensor to do certain action\&quot;\n  [topic payload]\n  (publish topic payload)\n  (set-topic topic payload))&quot;, :offset 125, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defroutes app-routes\n           ; (route/resources \&quot;/\&quot; {:root \&quot;public\&quot;})\n           ;; NOTE: this will deliver your index.html\n           ; (GET \&quot;/\&quot; [] (-&gt; (response/resource-response \&quot;index.html\&quot; {:root \&quot;public\&quot;})\n           ;                (response/content-type \&quot;text/html\&quot;)))\n         ; (GET \&quot;/\&quot; [] (myviews/home-page (instruments/get-instruments)))\n\n           (sweet/api\n             (sweet/context \&quot;/api\&quot; []\n                            :tags [\&quot;api\&quot;]\n\n                            (sweet/GET \&quot;/topics\&quot; []\n                                       :query-params []\n                                       (ring.util.http-response/ok (mqtt/topics)))\n\n                            (sweet/GET \&quot;/action\&quot; []\n                                       :query-params [topic :- s/Str ,  {action :- s/Int nil}]\n                                       (ring.util.http-response/ok (mqtt/do-action topic action)))\n\n                            ))\n\n           (route/not-found \&quot;&lt;h1&gt; Sorry! Page not found.&lt;/h1&gt;\&quot;))&quot;, :offset 995, :ns &quot;arduino.web&quot;} {:command &quot;(get-topics)&quot;, :offset 12, :ns &quot;arduino.mqtt&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1540409100293">{:repl-history {:ide [], :local [{:command &quot;(ns arduino.core\n  (:require my.ns\n           [samsara-mqtt.mqtt-server :as mqtt]\n           [com.stuartsierra.component :as component]\n           [reloaded.repl :refer\n            [set-init! system init start stop go reset]])\n  )&quot;, :offset 230, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:require [samsara-mqtt.mqtt-server :as mqtt]\n           [com.stuartsierra.component :as component]\n           [reloaded.repl :refer\n            [set-init! system init start stop go reset]])\n  )&quot;, :offset 213, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:gen-class)\n  (:require [clojurewerkz.machine-head.client :as mh]\n            ;[com.stuartsierra.component :as component]\n            [reloaded.repl :refer\n            ;         [set-init! system init start stop go reset]\n            ]))&quot;, :offset 257, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:require [clojurewerkz.machine-head.client :as mh]\n            ;[com.stuartsierra.component :as component]\n            [reloaded.repl :refer\n            ;         [set-init! system init start stop go reset]\n            ]))&quot;, :offset 242, :ns &quot;user&quot;} {:command &quot;(ns arduino.core\n  (:require [clojurewerkz.machine-head.client :as mh]\n            ;[com.stuartsierra.component :as component]\n            ))&quot;, :offset 141, :ns &quot;user&quot;} {:command &quot;(defn demo [&amp; args]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {\&quot;hello\&quot; 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    (mh/publish conn \&quot;hello\&quot; \&quot;Hello, world\&quot;)))&quot;, :offset 387, :ns &quot;arduino.core&quot;} {:command &quot;(defn demo []\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {\&quot;hello\&quot; 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    (mh/publish conn \&quot;hello\&quot; \&quot;Hello, world\&quot;)))&quot;, :offset 381, :ns &quot;arduino.core&quot;} {:command &quot;(demo)&quot;, :offset 6, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe []\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {\&quot;hello\&quot; 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    ))&quot;, :offset 346, :ns &quot;arduino.core&quot;} {:command &quot;(defn publish []\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn \&quot;hello\&quot; \&quot;Hello, world\&quot;)))&quot;, :offset 126, :ns &quot;arduino.core&quot;} {:command &quot;(publish)&quot;, :offset 9, :ns &quot;arduino.core&quot;} {:command &quot;(defn publish [topic payload]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn topic payload)))&quot;, :offset 130, :ns &quot;arduino.core&quot;} {:command &quot;(publish \&quot;hello\&quot; \&quot;123\&quot;)&quot;, :offset 23, :ns &quot;arduino.core&quot;} {:command &quot;(subscribe)&quot;, :offset 11, :ns &quot;arduino.core&quot;} {:command &quot;(publish \&quot;hello\&quot; \&quot;1243\&quot;)&quot;, :offset 24, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))\n    ))&quot;, :offset 349, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                     (println (String. payload \&quot;UTF-8\&quot;))\n                                     (mh/disconnect conn)\n                                     (System/exit 0)))))&quot;, :offset 344, :ns &quot;arduino.core&quot;} {:command &quot;(defn publish [topic payload]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn topic payload)\n    (println \&quot;published topic:\&quot; topic \&quot; payload:\&quot; payload)))&quot;, :offset 189, :ns &quot;arduino.core&quot;} {:command &quot;(publish \&quot;tb1\&quot; \&quot;1243\&quot;)&quot;, :offset 22, :ns &quot;arduino.core&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                     (println \&quot;RCVD: \&quot; (String. payload \&quot;UTF-8\&quot;))\n                                   ; (mh/disconnect conn)\n                                   ;(System/exit 0)\n                                   ))))&quot;, :offset 388, :ns &quot;arduino.core&quot;} {:command &quot;(ns arduino.mqtt\n  (:require [clojurewerkz.machine-head.client :as mh]\n   ))&quot;, :offset 76, :ns &quot;user&quot;} {:command &quot;(defn publish [topic payload]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/publish conn topic payload)\n    (println \&quot;published topic:\&quot; topic \&quot; payload:\&quot; payload)\n    (mh/disconnect conn)))&quot;, :offset 214, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn subscribe [topic]\n  (let [conn (mh/connect \&quot;tcp://debian.hoertlehner.com:1883\&quot;)]\n    (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]\n                                   (println \&quot;RCVD: \&quot; (String. payload \&quot;UTF-8\&quot;))\n                                   ; (mh/disconnect conn)\n                                   ;(System/exit 0)\n                                   ))))&quot;, :offset 386, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn topics (atom {:test1 {:valu 13 :date nil :desc \&quot;Tiberius Test 1\&quot;}\n                    :ph    {:valu 7 :date nil :desc \&quot;PH of Water\&quot;}\n                    :test2 {:valu 123 :date nil :desc \&quot;Tiberius Test 2\&quot;}\n                    }))&quot;, :offset 235, :ns &quot;arduino.mqtt&quot;} {:command &quot;(atom {:a 3})&quot;, :offset 13, :ns &quot;arduino.mqtt&quot;} {:command &quot;(atom {:a 3 :b {:name \&quot;asdf\&quot;}})&quot;, :offset 31, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn topics (atom {:test1 {:valu 13  :desc \&quot;Tiberius Test 1\&quot;}\n                    :ph    {:valu 7   :desc \&quot;PH of Water\&quot;}\n                    :test2 {:valu 123 :desc \&quot;Tiberius Test 2\&quot;}\n                    }))&quot;, :offset 208, :ns &quot;arduino.mqtt&quot;} {:command &quot;(def topics (atom {:test1 {:valu 13  :desc \&quot;Tiberius Test 1\&quot;}\n                    :ph    {:valu 7   :desc \&quot;PH of Water\&quot;}\n                    :test2 {:valu 123 :desc \&quot;Tiberius Test 2\&quot;}\n                    }))&quot;, :offset 207, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn get-topics []\n  (@topics)\n  )&quot;, :offset 35, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn get-topics []\n  @topics\n  )&quot;, :offset 33, :ns &quot;arduino.mqtt&quot;} {:command &quot;(ns arduino.web\n  (:require\n\n    [schema.core :as s]\n\n    [ring.util.response :as response]\n    [ring.util.http-response :refer :all]\n    [ring.middleware.defaults :refer [wrap-defaults site-defaults]]\n    [ring.middleware.reload :refer [wrap-reload]]\n\n    [compojure.core :refer :all] ; [compojure.core :refer [defroutes routes]]\n    [compojure.route :as route]\n    [compojure.api.sweet :as sweet]\n    [cheshire.core :refer :all]\n\n    [arduino.mqtt :as mqtt]\n   ))&quot;, :offset 465, :ns &quot;user&quot;} {:command &quot;(ns arduino.web\n  (:require\n    [schema.core :as s]\n\n    [ring.util.response :as response]\n    [ring.util.http-response :refer :all]\n    [ring.middleware.defaults :refer [wrap-defaults site-defaults]]\n    [ring.middleware.reload :refer [wrap-reload]]\n\n    [compojure.core :refer :all] ; [compojure.core :refer [defroutes routes]]\n    [compojure.route :as route]\n    [compojure.api.sweet :as sweet]\n    [cheshire.core :refer :all]\n\n    [arduino.mqtt :as mqtt]\n   ))&quot;, :offset 464, :ns &quot;user&quot;} {:command &quot;(println \&quot;setting up routes..\&quot;)&quot;, :offset 31, :ns &quot;arduino.web&quot;} {:command &quot;(defn set-topic [topic payload]\n  (swap! topics assoc topic payload)\n  )&quot;, :offset 72, :ns &quot;arduino.mqtt&quot;} {:command &quot;(subscribe \&quot;tb1\&quot;)&quot;, :offset 17, :ns &quot;arduino.mqtt&quot;} {:command &quot;(publish \&quot;tb1\&quot; \&quot;12434\&quot;)&quot;, :offset 23, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn x {:test1 {:valu 1}})&quot;, :offset 27, :ns &quot;arduino.mqtt&quot;} {:command &quot;(def x {:test1 {:valu 1}})&quot;, :offset 26, :ns &quot;arduino.mqtt&quot;} {:command &quot;(assoc-in x [:test1 :valu] 15)&quot;, :offset 30, :ns &quot;arduino.mqtt&quot;} {:command &quot;(println x)&quot;, :offset 11, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn set-topic [topic payload]\n  (swap! topics assoc-in [topic :valu] payload)\n  )&quot;, :offset 83, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn set-topic\n  \&quot;updates the :valu\&quot;\n  [topic payload]\n  (swap! topics assoc-in [topic :valu :time (t/now) ] payload)\n  )&quot;, :offset 122, :ns &quot;arduino.mqtt&quot;} {:command &quot;(ns arduino.mqtt\n  (:require [clj-time.core :as t] \n            [clojurewerkz.machine-head.client :as mh]\n   ))&quot;, :offset 111, :ns &quot;user&quot;} {:command &quot;(defn set-topic\n  \&quot;updates the :valu\&quot;\n  [topic payload]\n  (swap! topics assoc-in [topic :valu ] payload)\n  (swap! topics assoc-in [topic :time ] (t/now))\n  )&quot;, :offset 157, :ns &quot;arduino.mqtt&quot;} {:command &quot;(set-topic :ph 9)&quot;, :offset 17, :ns &quot;arduino.mqtt&quot;} {:command &quot;(set-topic :ph 10)&quot;, :offset 18, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defn do-action\n  \&quot;tell sensor to do certain action\&quot;\n  [topic payload]\n  (publish topic payload)\n  (set-topic topic payload))&quot;, :offset 125, :ns &quot;arduino.mqtt&quot;} {:command &quot;(defroutes app-routes\n           ; (route/resources \&quot;/\&quot; {:root \&quot;public\&quot;})\n           ;; NOTE: this will deliver your index.html\n           ; (GET \&quot;/\&quot; [] (-&gt; (response/resource-response \&quot;index.html\&quot; {:root \&quot;public\&quot;})\n           ;                (response/content-type \&quot;text/html\&quot;)))\n         ; (GET \&quot;/\&quot; [] (myviews/home-page (instruments/get-instruments)))\n\n           (sweet/api\n             (sweet/context \&quot;/api\&quot; []\n                            :tags [\&quot;api\&quot;]\n\n                            (sweet/GET \&quot;/topics\&quot; []\n                                       :query-params []\n                                       (ring.util.http-response/ok (mqtt/topics)))\n\n                            (sweet/GET \&quot;/action\&quot; []\n                                       :query-params [topic :- s/Str ,  {action :- s/Int nil}]\n                                       (ring.util.http-response/ok (mqtt/do-action topic action)))\n\n                            ))\n\n           (route/not-found \&quot;&lt;h1&gt; Sorry! Page not found.&lt;/h1&gt;\&quot;))&quot;, :offset 995, :ns &quot;arduino.web&quot;} {:command &quot;(get-topics)&quot;, :offset 12, :ns &quot;arduino.mqtt&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -282,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540402844126</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="data pushing to react client working">
+      <created>1540409063869</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540409063869</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -323,7 +291,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="data being pushed to client" />
-    <option name="LAST_COMMIT_MESSAGE" value="data being pushed to client" />
+    <MESSAGE value="data pushing to react client working" />
+    <option name="LAST_COMMIT_MESSAGE" value="data pushing to react client working" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/clj/arduino/core.clj">
@@ -364,10 +333,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clj/arduino/mqtt.clj">
+    <entry file="file://$PROJECT_DIR$/project.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
+        <state relative-caret-position="741">
+          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -378,24 +347,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="49" column="33" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/arduino/db.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/arduino/views.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
@@ -410,6 +365,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="928">
           <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/arduino/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clj/arduino/mqtt.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="991">
+          <caret line="75" column="41" lean-forward="true" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
         </state>
       </provider>
     </entry>

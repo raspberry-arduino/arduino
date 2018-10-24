@@ -73,7 +73,7 @@
 
   (subscribe "test2")
   (publish "test2" "1243456")
-  (publish "test1" "error3")
+  (publish "test1" "100 degrees celsius")
   (get-topics)
   (map println (get-topics))
   (subscribe-topics-of-interest)

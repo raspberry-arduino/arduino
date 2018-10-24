@@ -35,6 +35,7 @@
 
   :ring {
          :handler arduino.web/app
+         :auto-reload? false
          }
 
   :min-lein-version "2.5.3"
