@@ -15,7 +15,14 @@
     [arduino.mqtt :as mqtt]
    ))
 
-(println "setting up routes..")
+;(println "setting up routes..")
+
+;(println "interesting topics are: " (mqtt/get-topics))
+
+; automatically subscribe to topics of interest
+;(mqtt/subscribe-topics-of-interest)
+
+;(mqtt/subscribe "test2")
 
 
 (defroutes app-routes
@@ -48,12 +55,14 @@
 
 
 
-(def app (wrap-defaults app-routes site-defaults) )
+(def app ( let [xx (mqtt/subscribe-topics-of-interest)]
+           (wrap-defaults app-routes site-defaults)) )
+
 ;(def app (wrap-defaults app-routes (assoc-in site-defaults [:security :anti-forgery] false)))
 
 ;; NOTE: wrap reload isn't needed when the clj sources are watched by figwheel
 ;; but it's very good to know about
-(def dev-app (wrap-reload (wrap-defaults #'app-routes site-defaults)))
+;(def dev-app (wrap-reload (wrap-defaults #'app-routes site-defaults)))
 
-(println "setting up routes..done.");
+;(println "setting up routes..done.");
 

@@ -26,12 +26,16 @@
 (defn sensor-table []
   (let [data (re-frame/subscribe [::subs/data])
         xx (println "rendering data: " @data)]
-    [:div
-     [:ul (for [topic @data]
-        [:li (get topic 0)
-         [:span {:style {:color "orange"}}
-            [:b ":   " (:valu (get topic 1))]  ]  ] )]
-     ]))
+    (fn []
+      (js/setInterval #(re-frame.core/dispatch [:request-data]) 1000)
+      [:div
+       [:ul (for [topic @data]
+              [:li {:key (get topic 0) } (get topic 0)
+               [:span {:style {:color "orange"}}
+                [:b ":   " (:valu (get topic 1))]  ]  ] )]
+       ]
+      )
+    ))
 
 
 (defn main-panel []
@@ -41,7 +45,7 @@
      [hello-component "TB"]
      [timer-component]
      [sensor-table]
-     [:p "the finest marijuana grown by arduino controlled hydroponics"]
+     [:p "arduino controlled hydroponics"]
      [request-data-button]
      ]))
 

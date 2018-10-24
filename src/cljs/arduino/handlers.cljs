@@ -5,15 +5,12 @@
 
 (println "Setting up event handlers..")
 
-(defn xxx []
-  (println "xxx") )
 
-
-(register-handler  :request-data
+(register-handler :request-data
   (fn
     [db _]
     ;; kick off the GET, making sure to supply a callback for success and failure
-    (println "getting test! data..")
+    (println ":request-data..")
     (GET
       "http://localhost:7000/api/topics"
       {:handler       #(re-frame.core/dispatch [:process-data %1])   ;; further dispatch !!
@@ -24,14 +21,13 @@
 
 (register-handler :process-data
    (fn [db data]
-     (println "processing data..")
-     (println "received data: " data)
+     (println "processing data: " data)
      (assoc db :data (get data 1) )))
 
 
-; request data on startup
-(re-frame.core/dispatch [:request-data])
+(defn xxx []
+  (println "...")
+  )
 
-; request data every 5 seconds
-(js/setTimeout #(re-frame.core/dispatch [:request-data]) 5000)
 
+(println "Setting up event handlers.. done.")
