@@ -45,8 +45,8 @@
                                        (ring.util.http-response/ok (mqtt/get-topics)))
 
                             (sweet/GET "/action" []
-                                       :query-params [topic :- s/Str ,  {action :- s/Int nil}]
-                                       (ring.util.http-response/ok (mqtt/do-action topic action)))
+                                       :query-params [topic :- s/Str ,  {payload :- s/Str nil}]
+                                       (ring.util.http-response/ok (mqtt/do-action topic payload)))
 
                             ))
 

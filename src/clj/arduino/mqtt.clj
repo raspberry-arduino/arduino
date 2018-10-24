@@ -8,11 +8,11 @@
 ; most recent values, as received from the sensors,
 ; or as it has been set via the rest api
 
-(def topics (atom { :test1 {:valu "13"   :desc "Tiberius Test 1"}
-                    :test2 {:valu "123"  :desc "Tiberius Test 2"}
-                    :ph    {:valu "7"    :desc "PH of Water"}
-                    :light1 {:valu "0"   :desc "Light on=1 off=0"}
-                    :light2 {:valu "0"   :desc "Light on=1 off=0"}
+(def topics (atom { :test1 {:valu "13"   :desc "Tiberius Test 1" :is-command false}
+                    :test2 {:valu "123"  :desc "Tiberius Test 2" :is-command false}
+                    :ph    {:valu "7"    :desc "PH of Water" :is-command false}
+                    :light1 {:valu "0"   :desc "Light on=1 off=0" :is-command true}
+                    :light2 {:valu "0"   :desc "Light on=1 off=0" :is-command true}
                     }))
 
 (defn get-topics []
@@ -47,6 +47,7 @@
 (defn do-action
   "tell sensor to do certain action"
   [topic payload]
+  (println "do-action topic:" topic "payload:" payload)
   (publish topic payload)
   (set-topic topic payload))
 

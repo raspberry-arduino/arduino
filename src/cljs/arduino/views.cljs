@@ -37,6 +37,34 @@
       )
     ))
 
+(defn atom-input [value]
+  [:input {:type "text"
+           :value @value
+           :on-change #(reset! value (-> % .-target .-value))}])
+
+
+(defn sensor-commands []
+  (let [data (re-frame/subscribe [::subs/data])
+        xx (println "rendering commands: " @data)
+        val (atom "foo")
+        command (atom nil)
+        ]
+    (fn []
+      [:div
+       [:select {:on-change #(reset! command (-> % .-target .-value)) }
+        ; #(println (.. % -target -value))
+        (for [topic @data]
+              [:option {:key (get topic 0) } (get topic 0)]
+              )]
+       [atom-input val]
+       [:input {:type "button"
+                :value "Execute!"
+                :on-click #(re-frame.core/dispatch [:set-data @command @val])}]
+
+       ]
+    )))
+
+
 
 (defn main-panel []
   (let [name (re-frame/subscribe [::subs/name])]
@@ -45,6 +73,7 @@
      [hello-component "TB"]
      [timer-component]
      [sensor-table]
+     [sensor-commands]
      [:p "arduino controlled hydroponics"]
      [request-data-button]
      ]))
