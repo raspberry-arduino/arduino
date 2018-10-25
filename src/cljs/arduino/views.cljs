@@ -80,7 +80,7 @@
 
        [mui/grid {:item true :xs 12}
         [mui/typography {:variant :display2
-                         :style   {:color :blue}}
+                         :style   {:color :white}}
          "Arduino 4 Hydroponics"]]
 
        [mui/grid {:item true}
@@ -102,6 +102,16 @@
   "bongo")
 
 
+(defn on-off-icon [name data]
+  [mui/typography {:variant :title
+                   :style   {:color   :yellow}}
+       (if (= data "1")
+         [mui/icon {:on-click #(re-frame.core/dispatch [:set-data name "0"])}  "alarm_on"]
+         (if (= data "0")
+           [mui/icon {:on-click #(re-frame.core/dispatch [:set-data name "1"])}  "alarm_off"]) )
+     ]
+  )
+
 (defn sensor-card [name sensor-value]
   [mui/grid {:item true}
    [mui/card
@@ -109,7 +119,12 @@
       [mui/card-content
           [mui/typography {:variant :title
                            :style   {:color :white}}
-          sensor-value]]]])
+          sensor-value]
+          [on-off-icon name sensor-value]
+       ]]])
+
+
+
 
 
 (defn sensor-cards []
@@ -123,11 +138,10 @@
               [sensor-card (get topic 0) (:valu (get topic 1))])
 
          [sensor-card "mao" 1.55]
-         [sensor-card "tb" 7.31]
+         [sensor-card "tb" "sir"]
+         [sensor-card "cat" "miao"]
+
    ])))
-
-
-
 
 
 
@@ -145,6 +159,9 @@
 
        [sensor-cards]
 
+       [mui/icon "arrow_forward_ios"]
+       [mui/icon "alarm_off"]
+       [mui/icon "alarm_on"]
        [mui/divider]
 
         [:p "arduino controlled hydroponics"]
