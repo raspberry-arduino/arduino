@@ -87,9 +87,6 @@
        ]]])
 
 
-
-
-
 (defn sensor-cards []
   (let [data (re-frame/subscribe [::subs/data])]
     (fn []
@@ -145,7 +142,7 @@
    [mui/grid {:item true :xs 6}
     [mui/typography {:variant :display2
                      :style   {:color :white}}
-     "Hydroponics 4 Colombia"]]
+     "Hydroponics 4 U"]]
 
    [mui/grid {:item true :xs 6}
     [mui/typography {:variant :title
@@ -169,17 +166,19 @@
      [:a {:href "#/shit"} "shit"]]]
 
    ]
-
-
-
-
    ])
+
+
 
 (defn shit []
-  [:div
-   [menu "Shit"]
-   [:h1 "Now get your shit done, please!"]
-   ])
+  (let [saying (re-frame/subscribe [::subs/saying])
+        bongo "bongo"]
+    [:div
+     [menu "Shit"]
+     [mui/tooltip {:title @saying
+                   :on-open (fn [] ( println "tooltip onOpen"))
+                   :on-close (fn [] (println "tooltip onClose")) }
+       [:h1 "Now get your shit done, please!"] ]]))
 
 (defn home []
   [:div

@@ -13,3 +13,9 @@
   ::data
   (fn [db]
     (:data db)))
+
+
+(re-frame/reg-sub
+  ::saying
+  (fn [db]
+    (:saying db)))
