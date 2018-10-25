@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bc445c8-f39a-4b45-8a7a-8175bffcc74f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/cljs/arduino/mui.cljs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cljs/arduino/views.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/arduino/views.cljs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,34 +28,34 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="clj" value="9" />
-          <entry key="cljs" value="22" />
-          <entry key="html" value="2" />
-          <entry key="md" value="1" />
+          <entry key="cljs" value="23" />
+          <entry key="html" value="3" />
+          <entry key="md" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Clojure" value="9" />
-          <entry key="ClojureScript" value="22" />
-          <entry key="HTML" value="2" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="ClojureScript" value="23" />
+          <entry key="HTML" value="3" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="clj" value="2817" />
-          <entry key="cljs" value="1508" />
-          <entry key="html" value="73" />
-          <entry key="md" value="321" />
+          <entry key="clj" value="2898" />
+          <entry key="cljs" value="2009" />
+          <entry key="html" value="78" />
+          <entry key="md" value="520" />
           <entry key="txt" value="101" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Clojure" value="2817" />
-          <entry key="ClojureScript" value="1508" />
-          <entry key="HTML" value="73" />
-          <entry key="PLAIN_TEXT" value="422" />
+          <entry key="Clojure" value="2898" />
+          <entry key="ClojureScript" value="2009" />
+          <entry key="HTML" value="78" />
+          <entry key="PLAIN_TEXT" value="621" />
         </counts>
       </usages-collector>
     </session>
@@ -60,8 +65,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clj/arduino/mqtt.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="55" column="54" lean-forward="true" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+            <state relative-caret-position="1421">
+              <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/views.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="846">
+              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -69,17 +92,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+            <state relative-caret-position="232">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/mui.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1322">
+              <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/clj/arduino/web.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1450">
+              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cljs/arduino/db.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="5" column="55" lean-forward="true" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+            <state relative-caret-position="174">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cljs/arduino/handlers.cljs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="609">
+              <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -94,6 +144,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>uti</find>
+      <find>jyu-styles-light</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -102,32 +158,32 @@
       <list>
         <option value="$PROJECT_DIR$/src/clj/arduino/core.clj" />
         <option value="$PROJECT_DIR$/src/clj/arduino/arduino/web.clj" />
-        <option value="$PROJECT_DIR$/resources/public/index.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/events.cljs" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/subs.cljs" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/db.cljs" />
         <option value="$PROJECT_DIR$/src/clj/arduino/web.clj" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/core.cljs" />
         <option value="$PROJECT_DIR$/src/cljs/arduino/handlers.cljs" />
-        <option value="$PROJECT_DIR$/src/cljs/arduino/views.cljs" />
         <option value="$PROJECT_DIR$/src/clj/arduino/mqtt.clj" />
+        <option value="$PROJECT_DIR$/src/cljs/arduino/mui.cljs" />
         <option value="$PROJECT_DIR$/project.clj" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/resources/public/index.html" />
+        <option value="$PROJECT_DIR$/src/cljs/arduino/views.cljs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="223" />
-    <option name="y" value="132" />
-    <option name="width" value="2842" />
-    <option name="height" value="1384" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="95" />
+    <option name="y" value="84" />
+    <option name="width" value="2862" />
+    <option name="height" value="1502" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -147,45 +203,15 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="arduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="arduino" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="arduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="arduino" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="arduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="arduino" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="clj" type="462c0819:PsiDirectoryNode" />
-              <item name="arduino" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="arduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="arduino" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cljs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="arduino" type="b2602c69:ProjectViewProjectNode" />
-              <item name="arduino" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cljs" type="462c0819:PsiDirectoryNode" />
-              <item name="arduino" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540409341230" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540487991808" />
     <property name="cursive.last.file.extension./home/hoertlehner/Documents/arduino/src/clj" value="clj" />
     <property name="cursive.last.file.extension./home/hoertlehner/Documents/arduino/src/cljs" value="cljs" />
   </component>
@@ -281,7 +307,7 @@
     <frame x="0" y="39" width="3200" height="1761" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15016077" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12604502" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -304,7 +330,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="REPL" order="6" side_tool="true" visible="true" weight="0.2784566" />
+      <window_info anchor="right" id="REPL" order="6" side_tool="true" visible="true" weight="0.20321544" />
       <window_info anchor="right" id="Leiningen" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Maven Projects" order="9" />
@@ -327,20 +353,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/arduino/config.cljs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -353,8 +365,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clj/arduino/web.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1136">
-          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
+        <state relative-caret-position="1450">
+          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -374,36 +386,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/arduino/handlers.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="32" column="45" lean-forward="true" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cljs/arduino/views.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
+        <state relative-caret-position="609">
+          <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clj/arduino/mqtt.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="55" column="54" lean-forward="true" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+        <state relative-caret-position="1421">
+          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cljs/arduino/db.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="5" column="55" lean-forward="true" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
+        <state relative-caret-position="174">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="19" column="63" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/arduino/mui.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1322">
+          <caret line="134" column="12" selection-start-line="134" selection-start-column="12" selection-end-line="134" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cljs/arduino/views.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
         </state>
       </provider>
     </entry>

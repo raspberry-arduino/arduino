@@ -3,6 +3,7 @@
    [reagent.core :refer [atom]]
    [re-frame.core :as re-frame]
    [arduino.subs :as subs]
+   [arduino.mui :as mui]
    ))
 
 (defn hello-component [name]
@@ -65,17 +66,90 @@
     )))
 
 
+(defn create-panel [tr]
+    ;; "Jumbotron" header
+    [mui/grid {:item true :xs 12}
+     [mui/paper {:square true
+                 :style  {:background-color mui/secondary
+                          ;; :text-align       :center
+                          :padding          "1em 2em 1em 2em"}}
+
+      [mui/grid {:container   true
+                 :align-items :center
+                 :spacing     16}
+
+       [mui/grid {:item true :xs 12}
+        [mui/typography {:variant :display2
+                         :style   {:color :blue}}
+         "Arduino 4 Hydroponics"]]
+
+       [mui/grid {:item true}
+        [mui/typography {:variant :title
+                         :style   {:color   :white}}
+         (tr :sport/headline)]]
+
+       [mui/grid {:item true}
+        [mui/typography {:variant :title
+                         :style   {:color   :white}}
+         (tr :ice/headline)]]
+
+       [mui/grid {:item true}
+        [mui/typography {:variant :title
+                         :style   {:color   :white}}
+         (tr :swim/headline)]]]]])
+
+(defn tr [_]
+  "bongo")
+
+
+(defn sensor-card [name sensor-value]
+  [mui/grid {:item true}
+   [mui/card
+      [mui/card-header {:title name }]
+      [mui/card-content
+          [mui/typography {:variant :title
+                           :style   {:color :white}}
+          sensor-value]]]])
+
+
+(defn sensor-cards []
+  (let [data (re-frame/subscribe [::subs/data])]
+    (fn []
+        [mui/grid {:container   true
+                   :align-items :center
+                   :spacing     16}
+
+         (for [topic @data]
+              [sensor-card (get topic 0) (:valu (get topic 1))])
+
+         [sensor-card "mao" 1.55]
+         [sensor-card "tb" 7.31]
+   ])))
+
+
+
+
+
 
 (defn main-panel []
   (let [name (re-frame/subscribe [::subs/name])]
-    [:div
-     [:h1 "Hello from " @name]
-     [hello-component "TB"]
-     [timer-component]
-     [sensor-table]
-     [sensor-commands]
-     [:p "arduino controlled hydroponics"]
-     [request-data-button]
-     ]))
+    [mui/grid {:container true}
+    [mui/mui-theme-provider {:theme mui/jyu-theme-dark}
+      [create-panel tr]
+      [:div
+        [:h1 "Hello from " @name]
+        [hello-component "TB"]
+        [timer-component]
+        [sensor-table]
+        [sensor-commands]
+
+       [sensor-cards]
+
+       [mui/divider]
+
+        [:p "arduino controlled hydroponics"]
+        [request-data-button]
+
+     ]]]))
 
 

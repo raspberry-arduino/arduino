@@ -1,14 +1,22 @@
 (defproject arduino "0.1.0-SNAPSHOT"
   :dependencies [
-                 ;Clojure Essentials
+                 ;Common
                  [org.clojure/clojure "1.9.0"]
-                 [org.clojure/clojurescript "1.10.238"]
-                 [clj-time "0.11.0"]
-                 [clj-jgit "0.8.8"]
                  [clojure-future-spec "1.9.0-beta4"]        ; Clojure SPEC (required by compojure routing)
+                 [clj-time "0.14.3"]
+                 [clj-jgit "0.8.8"]
+                 [camel-snake-kebab "0.4.0"]
 
-                 ; Domain Libraries
-                 [clojurewerkz/machine_head "1.0.0"]        ; MQTT
+                 ;Frontend
+                 [org.clojure/clojurescript "1.10.238"]
+                 ;[cljsjs/react "16.4.0-0"]
+                 ;[cljsjs/react-dom "16.4.0-0"]
+                 [reagent "0.8.2-SNAPSHOT" :exclusions [cljsjs/react cljsjs/react-dom]] ; reagent has older react references than material-ui
+                 [re-frame "0.10.5"]
+
+                 [cljs-ajax "0.7.3"]
+                 ;[cljsjs/material-ui "3.1.1-0"]
+                 [cljsjs/material-ui "3.2.0-0"]
 
                  ; Backend
                  [ring "1.7.0"]
@@ -20,11 +28,9 @@
                  [compojure "1.6.1"] ; Routing
                  [metosin/compojure-api "1.1.10"]
                  [cheshire "5.8.0"] ; JSON encoding
+                 [clojurewerkz/machine_head "1.0.0"]        ; MQTT
 
-                 ;Frontend
-                 [reagent "0.7.0"]
-                 [re-frame "0.10.5"]
-                 [cljs-ajax "0.7.3"]
+
 
 ]
 
@@ -60,6 +66,8 @@
      :source-paths ["src/cljs"]
      :figwheel     {:on-jsload "arduino.core/mount-root"}
      :compiler     {:main                 arduino.core
+                    :npm-deps             false
+                    :infer-externs        true
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"
                     :asset-path           "js/compiled/out"
