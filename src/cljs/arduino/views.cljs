@@ -6,9 +6,6 @@
    [arduino.mui :as mui]
    ))
 
-(defn hello-component [name]
-  [:p "Hello, " name "!"])
-
 
 (defn timer-component []
   (let [seconds-elapsed (atom 0)]
@@ -66,40 +63,6 @@
     )))
 
 
-(defn create-panel [tr]
-    ;; "Jumbotron" header
-    [mui/grid {:item true :xs 12}
-     [mui/paper {:square true
-                 :style  {:background-color mui/secondary
-                          ;; :text-align       :center
-                          :padding          "1em 2em 1em 2em"}}
-
-      [mui/grid {:container   true
-                 :align-items :center
-                 :spacing     16}
-
-       [mui/grid {:item true :xs 12}
-        [mui/typography {:variant :display2
-                         :style   {:color :white}}
-         "Arduino 4 Hydroponics"]]
-
-       [mui/grid {:item true}
-        [mui/typography {:variant :title
-                         :style   {:color   :white}}
-         (tr :sport/headline)]]
-
-       [mui/grid {:item true}
-        [mui/typography {:variant :title
-                         :style   {:color   :white}}
-         (tr :ice/headline)]]
-
-       [mui/grid {:item true}
-        [mui/typography {:variant :title
-                         :style   {:color   :white}}
-         (tr :swim/headline)]]]]])
-
-(defn tr [_]
-  "bongo")
 
 
 (defn on-off-icon [name data]
@@ -149,10 +112,8 @@
   (let [name (re-frame/subscribe [::subs/name])]
     [mui/grid {:container true}
     [mui/mui-theme-provider {:theme mui/jyu-theme-dark}
-      [create-panel tr]
       [:div
         [:h1 "Hello from " @name]
-        [hello-component "TB"]
         [timer-component]
         [sensor-table]
         [sensor-commands]
@@ -168,5 +129,77 @@
         [request-data-button]
 
      ]]]))
+
+(defn menu [name]
+
+  [mui/paper {:square true
+              :style  {:background-color mui/secondary
+                       ;; :text-align       :center
+                       :padding          "1em 2em 1em 2em"}}
+
+  [mui/grid {:container   true
+             :align-items :center
+             :spacing     16
+             :xs 12}
+
+   [mui/grid {:item true :xs 6}
+    [mui/typography {:variant :display2
+                     :style   {:color :white}}
+     "Hydroponics 4 Colombia"]]
+
+   [mui/grid {:item true :xs 6}
+    [mui/typography {:variant :title
+                     :style   {:color   :white}}
+     name]]
+
+
+   [mui/grid {:item true :xs 4}
+    [mui/typography {:variant :title
+                     :style   {:color   :white}}
+     [:a {:href "#/"} "sensors"]]]
+
+   [mui/grid {:item true :xs 4}
+    [mui/typography {:variant :title
+                     :style   {:color   :white}}
+     [:a {:href "#/help"} "help"]]]
+
+   [mui/grid {:item true :xs 4}
+    [mui/typography {:variant :title
+                     :style   {:color   :white}}
+     [:a {:href "#/shit"} "shit"]]]
+
+   ]
+
+
+
+
+   ])
+
+(defn shit []
+  [:div
+   [menu "Shit"]
+   [:h1 "Now get your shit done, please!"]
+   ])
+
+(defn home []
+  [:div
+   [menu "Sensors"]
+   [main-panel]
+   ])
+
+(defn help []
+  [:div
+   [menu "Help"]
+   [:h1 "Help"
+    [:p "Arduino based Hydroponics by TB and the gang." ]
+    [:p "Sensors and Regulation."]
+    [:ol
+     [:li "Mao loves Clojure."]
+     [:li "The cat loves to sleep."]
+     [:li "TB is an C++ Ninja."]
+     ]
+    ]
+   ])
+
 
 

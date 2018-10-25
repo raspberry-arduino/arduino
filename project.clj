@@ -13,10 +13,10 @@
                  ;[cljsjs/react-dom "16.4.0-0"]
                  [reagent "0.8.2-SNAPSHOT" :exclusions [cljsjs/react cljsjs/react-dom]] ; reagent has older react references than material-ui
                  [re-frame "0.10.5"]
-
                  [cljs-ajax "0.7.3"]
                  ;[cljsjs/material-ui "3.1.1-0"]
                  [cljsjs/material-ui "3.2.0-0"]
+                 [secretary "1.2.3"]                        ; client-side routing
 
                  ; Backend
                  [ring "1.7.0"]

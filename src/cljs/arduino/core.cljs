@@ -6,6 +6,7 @@
    [arduino.views :as views]
    [arduino.config :as config]
    [arduino.handlers :as handlers]
+   [arduino.routes :as routes]
    ))
 
 
@@ -19,8 +20,18 @@
   (reagent/render [views/main-panel]
                   (.getElementById js/document "app")))
 
+
+(defn mount-routes []
+  (re-frame/clear-subscription-cache!)
+  (routes/app-routes)
+  (reagent/render [routes/current-page]
+                  (.getElementById js/document "app")))
+
+
+
 (defn ^:export init []
   (re-frame/dispatch-sync [::events/initialize-db])
   (dev-setup)
-  (mount-root)
+  ;(mount-root)
+  (mount-routes)
   (handlers/xxx))
