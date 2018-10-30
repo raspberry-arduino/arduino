@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: capacitor:0.6.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/capacitor/capacitor/0.6.0/capacitor-0.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
