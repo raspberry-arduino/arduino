@@ -13,6 +13,7 @@
     [cheshire.core :refer :all]
 
     [arduino.mqtt :as mqtt]
+    [arduino.influx :as influx]
    ))
 
 ;(println "setting up routes..")
@@ -47,6 +48,12 @@
                             (sweet/GET "/action" []
                                        :query-params [topic :- s/Str ,  {payload :- s/Str nil}]
                                        (ring.util.http-response/ok (mqtt/do-action topic payload)))
+
+
+                            (sweet/GET "/history" []
+                              :query-params [topic :- s/Str ]
+                              (ring.util.http-response/ok (influx/history topic)))
+
 
                             ))
 

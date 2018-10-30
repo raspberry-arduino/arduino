@@ -49,7 +49,8 @@
   [topic payload]
   (println "do-action topic:" topic "payload:" payload)
   (publish topic payload)
-  (set-topic topic payload))
+  ;(set-topic topic payload)
+  )
 
 (defn subscribe-topics-of-interest []
   ( let [topics (get-topics)]

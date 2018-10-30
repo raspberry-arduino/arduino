@@ -19,3 +19,9 @@
   ::saying
   (fn [db]
     (:saying db)))
+
+
+(re-frame/reg-sub
+  ::history
+  (fn [db]
+    (:history db)))

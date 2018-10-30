@@ -5,5 +5,7 @@
    :data { :test1 {:valu 13  :desc "Tiberius Test 1"}
            :test2 {:valu 123 :desc "Tiberius Test 2"}}
    :saying "Now! Yess - NOW!!"
-   }
+   :history {
+      :light1  [ 1 2 3 4 5 6 7 8 9 10 9 8 7 6 5 4 3 2 1 ]
+   }}
   )

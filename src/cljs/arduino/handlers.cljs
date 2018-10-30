@@ -40,6 +40,28 @@
                     (assoc db :loading? true)))
 
 
+
+(register-handler :request-history
+                  (fn
+                    [db data]
+                    ;; kick off the GET, making sure to supply a callback for success and failure
+                    (println ":request-history: "  (get data 1))
+                    (GET
+                      (str "http://localhost:7000/api/history?topic=" (get data 1))
+                      {:handler       #(re-frame.core/dispatch [:process-history (get data 1) %1]) ;; further dispatch !!
+                       :error-handler #(re-frame.core/dispatch [:bad-response %1])}) ;; further dispatch !!
+
+                    (assoc db :loading? true)))
+
+
+(register-handler :process-history
+                (fn [db data]
+                     (println "processing history: " data)
+                    (println "RCVD history: " (get data 1) (get data 2))      ;
+                    (assoc-in db [:history (keyword (get data 1))]  (get data 2))))
+
+
+
 ;(register-handler :set-data
 ;
 ;

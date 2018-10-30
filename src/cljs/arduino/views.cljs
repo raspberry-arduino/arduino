@@ -4,7 +4,22 @@
    [re-frame.core :as re-frame]
    [arduino.subs :as subs]
    [arduino.mui :as mui]
+   [oz.core :as oz]
    ))
+
+;; define a function for generating some dummy data
+(defn group-data [& names]
+  (apply concat
+         (for [n names]
+           (map-indexed (fn [i x] {:x i :y x :col n}) (take 20 (repeatedly #(rand-int 100)))))))
+
+
+(def line-plot
+  {:data {:values (group-data "monkey" "slipper" "broom")}
+   :encoding {:x {:field "x"}
+              :y {:field "y"}
+              :color {:field "col" :type "nominal"}}
+   :mark "line"})
 
 
 (defn timer-component []
@@ -25,7 +40,7 @@
   (let [data (re-frame/subscribe [::subs/data])
         xx (println "rendering data: " @data)]
     (fn []
-      (js/setInterval #(re-frame.core/dispatch [:request-data]) 1000)
+        (js/setInterval #(re-frame.core/dispatch [:request-data]) 1000)
       [:div
        [:ul (for [topic @data]
               [:li {:key (get topic 0) } (get topic 0)
@@ -97,13 +112,34 @@
          (for [topic @data]
               [sensor-card (get topic 0) (:valu (get topic 1))])
 
-         [sensor-card "mao" 1.55]
-         [sensor-card "tb" "sir"]
-         [sensor-card "cat" "miao"]
+         ;[sensor-card "mao" 1.55]
+         ;[sensor-card "tb" "sir"]
+         ;[sensor-card "cat" "miao"]
 
-   ])))
+        ])))
 
 
+(defn lineplot-convert [name history]
+  (map-indexed (fn [idx itm] (assoc {} :x idx :y itm :col name)) history))
+
+(defn line-plot-settings [name history]
+  {:data {:values (lineplot-convert name history)}
+   :encoding {:x {:field "x"}
+              :y {:field "y"}
+              :color {:field "col" :type "nominal"}}
+   :mark "line"})
+
+
+(defn sensor-plot [name]
+  (let [ xx (re-frame.core/dispatch [:request-history name])     ; request history once at first time
+         history (re-frame/subscribe [::subs/history])]      ; get the data from the re-frame db
+    (fn []
+      ( let [plot-data (line-plot-settings name ((keyword name) @history)) ; create vega plot from array-data
+             xx (println "lineplot data: " plot-data)]
+        [oz.core/vega-lite plot-data])
+       )))
+
+;
 
 (defn main-panel []
   (let [name (re-frame/subscribe [::subs/name])]
@@ -124,6 +160,13 @@
 
         [:p "arduino controlled hydroponics"]
         [request-data-button]
+
+        [oz.core/vega-lite line-plot]
+        [sensor-plot "light1"]
+        [sensor-plot "light2"]
+       [sensor-plot "ph"]
+
+
 
      ]]]))
 
@@ -165,8 +208,11 @@
                      :style   {:color   :white}}
      [:a {:href "#/shit"} "shit"]]]
 
+
+
    ]
    ])
+
 
 
 

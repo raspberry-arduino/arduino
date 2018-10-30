@@ -14,9 +14,9 @@
                  [reagent "0.8.2-SNAPSHOT" :exclusions [cljsjs/react cljsjs/react-dom]] ; reagent has older react references than material-ui
                  [re-frame "0.10.5"]
                  [cljs-ajax "0.7.3"]
-                 ;[cljsjs/material-ui "3.1.1-0"]
                  [cljsjs/material-ui "3.2.0-0"]
                  [secretary "1.2.3"]                        ; client-side routing
+                 [metasoarous/oz "1.3.1"]                   ; Vega Charting Wrapper
 
                  ; Backend
                  [ring "1.7.0"]
@@ -29,7 +29,7 @@
                  [metosin/compojure-api "1.1.10"]
                  [cheshire "5.8.0"] ; JSON encoding
                  [clojurewerkz/machine_head "1.0.0"]        ; MQTT
-
+                 [capacitor "0.6.0"]                        ; InfluxDB
 
 
 ]
@@ -37,6 +37,7 @@
   :plugins [
             [lein-cljsbuild "1.1.7"]
             [lein-ring "0.9.7"]
+            [lein-figwheel "0.5.17"]
             ]
 
   :ring {
