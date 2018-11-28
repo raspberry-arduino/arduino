@@ -1,6 +1,7 @@
 (ns arduino.mqtt
   (:require [clj-time.core :as t]
             [clojurewerkz.machine-head.client :as mh]
+            [arduino.scheduler :as scheduler]
    ))
 
 
@@ -8,12 +9,12 @@
 ; most recent values, as received from the sensors,
 ; or as it has been set via the rest api
 
-(def topics (atom { :test1 {:valu "13"   :desc "Tiberius Test 1" :is-command false}
-                    :test2 {:valu "123"  :desc "Tiberius Test 2" :is-command false}
-                    :ph    {:valu "7"    :desc "PH of Water" :is-command false}
-                    :light1 {:valu "0"   :desc "Light on=1 off=0" :is-command true}
-                    :light2 {:valu "0"   :desc "Light on=1 off=0" :is-command true}
-                    }))
+(def topics (atom {:test1  {:valu "13" :desc "Tiberius Test 1" :is-command false :timer {:on 60 :off 20}}
+                   :test2  {:valu "123" :desc "Tiberius Test 2" :is-command false}
+                   :ph     {:valu "7" :desc "PH of Water" :is-command false}
+                   :light1 {:valu "0" :desc "Light on=1 off=0" :is-command true :timer {:on 30 :off 10}}
+                   :light2 {:valu "0" :desc "Light on=1 off=0" :is-command true}
+                   }))
 
 (defn get-topics []
   @topics)
@@ -58,6 +59,27 @@
        (run! #(subscribe (name (get % 0))) topics ))))
 
 
+; SCHEDULER ON/OFF cycles for mqtt variables.
+
+
+(defn timer-action [time name data]
+  (println time "timer-action " name data)
+  (if data (do-action name "1") (do-action name "0")))
+
+
+(defn start-timer [name timer-data]
+  (if-not (nil? timer-data) (do (println "starting timer " name timer-data)
+                                (scheduler/start-cycle name (:on timer-data) (:off timer-data) timer-action)
+                              )))
+
+
+
+(defn start-timers []
+  (let [topics (get-topics)]
+    (run! #(start-timer  (name (get % 0))  (:timer (get % 1))  ) topics)))
+
+
+
 (comment    ;********************************************************************
 
    ; Test of Clojure Syntax
@@ -81,6 +103,7 @@
   (subscribe-topics-of-interest)
 
 
+  (start-timers)
 
   ) ;********************************************************************
 

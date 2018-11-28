@@ -30,7 +30,7 @@
                  [cheshire "5.8.0"] ; JSON encoding
                  [clojurewerkz/machine_head "1.0.0"]        ; MQTT
                  [capacitor "0.6.0"]                        ; InfluxDB
-
+                 [jarohen/chime "0.2.2"]                    ; Scheduler
 
 ]
 

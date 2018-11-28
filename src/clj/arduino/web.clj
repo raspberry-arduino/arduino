@@ -62,7 +62,8 @@
 
 
 
-(def app ( let [xx (mqtt/subscribe-topics-of-interest)]
+(def app ( let [xx (mqtt/subscribe-topics-of-interest)
+                yy (mqtt/start-timers)]
            (wrap-defaults app-routes site-defaults)) )
 
 ;(def app (wrap-defaults app-routes (assoc-in site-defaults [:security :anti-forgery] false)))
