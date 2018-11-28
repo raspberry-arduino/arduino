@@ -11,12 +11,12 @@
   (->> (periodic-seq (.. (.plusDays (t/now) -1 )
                          (withZone (DateTimeZone/forID "America/New_York"))
                          (withTime 20 0 0 0))
-                     (-> minutes t/seconds))
+                     (-> minutes t/minutes))
   ))
 
 (defn run-for [time-seq minutes]
   "lazy sequence of off-times"
-  (map #(t/plus % (t/seconds minutes)) time-seq)
+  (map #(t/plus % (t/minutes minutes)) time-seq)
   )
 
 (defn run-on-off [run-every-minutes run-for-minutes]
