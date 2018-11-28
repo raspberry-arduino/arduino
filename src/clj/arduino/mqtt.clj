@@ -9,11 +9,21 @@
 ; most recent values, as received from the sensors,
 ; or as it has been set via the rest api
 
-(def topics (atom {:test1  {:valu "13" :desc "Tiberius Test 1" :is-command false :timer {:on 60 :off 20}}
+(def topics (atom {
+                   :ph     {:valu "0" :desc "PH of Water" :is-command false}
+                   :ppm     {:valu "0" :desc "PPM of nutrients" :is-command false}
+
+                   ; light cycle: once a day on for 10 hours
+                   :light {:valu "0" :desc "Light on=1 off=0" :is-command true :timer {:on 1440 :off 600}}
+
+                   ; ozone cycle: every 6 hours on for 10 minutes.
+                   :ozone {:valu "0" :desc "Ozone generator on=1 off=0" :is-command true :timer {:on 360 :off 10}}
+
+                   :test1  {:valu "13" :desc "Tiberius Test 1" :is-command false :timer {:on 15 :off 2}}
                    :test2  {:valu "123" :desc "Tiberius Test 2" :is-command false}
-                   :ph     {:valu "7" :desc "PH of Water" :is-command false}
-                   :light1 {:valu "0" :desc "Light on=1 off=0" :is-command true :timer {:on 30 :off 10}}
-                   :light2 {:valu "0" :desc "Light on=1 off=0" :is-command true}
+
+
+
                    }))
 
 (defn get-topics []

@@ -35,7 +35,8 @@
         on-action (chime-at on-seq (fn [time] (f time name true)))
         off-action (chime-at off-seq (fn [time] (f time name false)))
         end (fn [] ( (on-action) (off-action)))
-        ]
+        xx (println name " on times: " (take 10 on-seq))
+        xx (println name " off times: " (take 10 off-seq)) ]
     end))
 
 
