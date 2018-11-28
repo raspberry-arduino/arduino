@@ -12,7 +12,7 @@
                     ;; kick off the GET, making sure to supply a callback for success and failure
                     (println ":request-data..")
                     (GET
-                      "http://localhost:7000/api/topics"
+                      "http://arduino.hoertlehner.com:7000/api/topics"
                       {:handler       #(re-frame.core/dispatch [:process-data %1]) ;; further dispatch !!
                        :error-handler #(re-frame.core/dispatch [:bad-response %1])}) ;; further dispatch !!
 
@@ -31,7 +31,7 @@
                     ;; kick off the GET, making sure to supply a callback for success and failure
                     (println ":set-data..")
                     (GET
-                      "http://localhost:7000/api/action"
+                      "http://arduino.hoertlehner.com:7000/api/action"
                       {:params        {:topic (get data 1)
                                        :payload  (get data 2)}
                        :handler       #(re-frame.core/dispatch [:post-success %1]) ;; further dispatch !!
@@ -47,7 +47,7 @@
                     ;; kick off the GET, making sure to supply a callback for success and failure
                     (println ":request-history: "  (get data 1))
                     (GET
-                      (str "http://localhost:7000/api/history?topic=" (get data 1))
+                      (str "http://arduino.hoertlehner.com:7000/api/history?topic=" (get data 1))
                       {:handler       #(re-frame.core/dispatch [:process-history (get data 1) %1]) ;; further dispatch !!
                        :error-handler #(re-frame.core/dispatch [:bad-response %1])}) ;; further dispatch !!
 
