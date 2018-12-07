@@ -98,6 +98,7 @@
     <orderEntry type="library" name="Leiningen: io.aviso/pretty:0.1.33" level="project" />
     <orderEntry type="library" name="Leiningen: io.netty/netty-all:4.1.11.Final" level="project" />
     <orderEntry type="library" name="Leiningen: irresponsible/tentacles:0.6.1" level="project" />
+    <orderEntry type="library" name="Leiningen: jarohen/chime:0.2.2" level="project" />
     <orderEntry type="library" name="Leiningen: javax.activation/activation:1.1" level="project" />
     <orderEntry type="library" name="Leiningen: javax.mail/mailapi:1.4.3" level="project" />
     <orderEntry type="library" name="Leiningen: javax.servlet/javax.servlet-api:3.1.0" level="project" />

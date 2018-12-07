@@ -10,20 +10,15 @@
 ; or as it has been set via the rest api
 
 (def topics (atom {
-                   :ph     {:valu "0" :desc "PH of Water" :is-command false}
-                   :ppm     {:valu "0" :desc "PPM of nutrients" :is-command false}
 
+                   :temp  {:valu 0 :format "%.1f" :desc "Temperature" :is-command false}
+                   :ph     {:valu 0 :format "%.3f" :desc "PH of Water" :is-command false}
+                   :ppm     {:valu 0 :format "%.2f" :desc "PPM of nutrients" :is-command false}
                    ; light cycle: once a day on for 10 hours
-                   :light {:valu "0" :desc "Light on=1 off=0" :is-command true :timer {:on 1440 :off 600}}
-
+                   :light {:valu 0 :format "%.0f" :desc "Light on=1 off=0" :is-command true :timer {:on 1440 :off 600}}
                    ; ozone cycle: every 6 hours on for 10 minutes.
-                   :ozone {:valu "0" :desc "Ozone generator on=1 off=0" :is-command true :timer {:on 360 :off 10}}
-
-                   :test1  {:valu "13" :desc "Tiberius Test 1" :is-command false :timer {:on 15 :off 2}}
-                   :test2  {:valu "123" :desc "Tiberius Test 2" :is-command false}
-
-
-
+                   :ozone {:valu 0 :format "%.0f" :desc "Ozone generator on=1 off=0" :is-command true :timer {:on 360 :off 10}}
+                   :status  {:valu 13 :format "%.0f" :desc "Tiberius Test 1" :is-command false :timer {:on 15 :off 2}}
                    }))
 
 (defn get-topics []
@@ -49,10 +44,13 @@
   (let [conn (mh/connect "tcp://debian.hoertlehner.com:1883")]
     (println "subscribing: " topic)
     (mh/subscribe conn {topic 0} (fn [^String topic _ ^bytes payload]
-                                   (println "RCVD: " topic ": " (String. payload "UTF-8"))
-                                   (set-topic (keyword topic) (String. payload "UTF-8") )
-                                   ; (mh/disconnect conn)
-                                   ;(System/exit 0)
+                                   (let [payload-str (String. payload "UTF-8")]
+                                     (println "RCVD: " topic ": " payload-str)
+                                     (set-topic (keyword topic) payload-str )
+                                     ; (mh/disconnect conn)
+                                     ;(System/exit 0)
+                                     )
+
                                    ))))
 
 (defn do-action
@@ -105,9 +103,10 @@
    (set-topic :ph 10)
 
 
-  (subscribe "test2")
-  (publish "test2" "1243456")
-  (publish "test1" "100 degrees celsius")
+  (subscribe "test3")
+  (publish "test3" "1243456")
+  (publish "test3" 123.456)                                ; crashes
+  (publish "test3" "100 degrees celsius")
   (get-topics)
   (map println (get-topics))
   (subscribe-topics-of-interest)

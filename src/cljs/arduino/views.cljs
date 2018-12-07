@@ -5,6 +5,10 @@
    [arduino.subs :as subs]
    [arduino.mui :as mui]
    [oz.core :as oz]
+
+   [goog.string :as gstring]
+   [goog.string.format]
+
    ))
 
 ;; define a function for generating some dummy data
@@ -12,6 +16,7 @@
   (apply concat
          (for [n names]
            (map-indexed (fn [i x] {:x i :y x :col n}) (take 20 (repeatedly #(rand-int 100)))))))
+
 
 
 (def line-plot
@@ -102,6 +107,13 @@
        ]]])
 
 
+(defn format-digits [value format-string]
+  (println "formatting value: " value " format:" format-string)
+  (if (or (nil? value) (nil? format-string)) value (gstring/format format-string value) )
+  )
+
+
+
 (defn sensor-cards []
   (let [data (re-frame/subscribe [::subs/data])]
     (fn []
@@ -110,7 +122,7 @@
                    :spacing     16}
 
          (for [topic @data]
-              [sensor-card (get topic 0) (:valu (get topic 1))])
+              [sensor-card (get topic 0) ( format-digits (:valu (get topic 1)) (:format (get topic 1))  )]) ; topic 1 is the data strucutre, topic 0 is the name of the data
 
          ;[sensor-card "mao" 1.55]
          ;[sensor-card "tb" "sir"]
