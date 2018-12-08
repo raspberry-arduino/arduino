@@ -1,22 +1,25 @@
 (ns arduino.influx
-  (:require [clj-time.core :as t]
-            [capacitor.core :as influx]
+  (:require [mount.core :refer [defstate]]
+            [clojure.tools.logging :refer [info]]
+            [clj-time.core :as t]
+            [capacitor.core :as influx]                     ;influx db
+            [arduino.config :refer [config]]
                              ))
 
+(defn influx-start []
+  (info "influx starting (" (get-in config [:influx :host]) ") ..")
+  (println "influx started.")
+  (influx/make-client (:influx config)))
 
-(def client ( influx/make-client {
-                                  :host     "metrics.hoertlehner.com"
-                                   :scheme   "http"
-                                   :port     8086
-                                   ; :username "root"
-                                   ; :password "root"
-                                   :db       "demo"
-                                   :version  "0.9"}
-                                 ))
+(defn influx-stop []
+  (info "influx stopping (but this is not supported by capacitor lib :-("))
 
+(defstate influx-conn
+          :start (influx-start)
+          :stop (influx-stop))
 
 (defn history [name]
-  (let [data  (influx/db-query client (str "SELECT * FROM mqtt_consumer WHERE (time > now() - 24h) AND (\"topic\" = '" name "') ") true)
+  (let [data  (influx/db-query influx-conn (str "SELECT * FROM mqtt_consumer WHERE (time > now() - 24h) AND (\"topic\" = '" name "') ") true)
         results (:results data)
         series (get (:series (get results 0)) 0)
         vals ( :values series)
@@ -36,11 +39,15 @@
 
 
 (comment  ;*****************************************************
-  (influx/ping client)
-  (influx/list-dbs client)
-  (influx/db-query client "SHOW SERIES" true)
-  (influx/db-query client "SELECT * FROM mqtt_consumer WHERE time > now() - 24h" true)
-  (influx/db-query client "SELECT MAX(value) FROM mqtt_consumer" true)
+  ; influx-conn is created by mount/start
+
+  (type influx-conn)
+  (influx/ping influx-conn)
+  (influx/version influx-conn)
+  (influx/list-dbs influx-conn)
+  (influx/db-query influx-conn "SHOW SERIES" true)
+  (influx/db-query influx-conn "SELECT * FROM mqtt_consumer WHERE time > now() - 24h" true)
+  (influx/db-query influx-conn "SELECT MAX(value) FROM mqtt_consumer" true)
 
 
   (history "light1")

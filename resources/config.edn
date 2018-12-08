@@ -1,0 +1,18 @@
+{:consul {:host "http://localhost:8500"
+          :kv-prefix "/v1/kv"}
+
+
+  :mqtt { :server "tcp://debian.hoertlehner.com:1883" }
+
+  :influx {:host     "metrics.hoertlehner.com"
+           :scheme   "http"
+           :port     8086
+           ; :username "root"
+           ; :password "root"
+           :db       "demo"
+           :version  "0.9"}
+
+  :web { :port 7000 }
+
+ }
+

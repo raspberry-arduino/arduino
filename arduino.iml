@@ -112,6 +112,7 @@
     <orderEntry type="library" name="Leiningen: metosin/ring-swagger:0.22.14" level="project" />
     <orderEntry type="library" name="Leiningen: metosin/schema-tools:0.9.0" level="project" />
     <orderEntry type="library" name="Leiningen: metosin/scjsv:0.4.0" level="project" />
+    <orderEntry type="library" name="Leiningen: mount:0.1.11" level="project" />
     <orderEntry type="library" name="Leiningen: net.cgrand/macrovich:0.2.0" level="project" />
     <orderEntry type="library" name="Leiningen: net.colourcoding/poppea:0.2.1" level="project" />
     <orderEntry type="library" name="Leiningen: net.sf.jopt-simple/jopt-simple:4.6" level="project" />
@@ -158,7 +159,8 @@
     <orderEntry type="library" name="Leiningen: org.mozilla/rhino:1.7R5" level="project" />
     <orderEntry type="library" name="Leiningen: org.msgpack/msgpack:0.6.12" level="project" />
     <orderEntry type="library" name="Leiningen: org.ow2.asm/asm-all:4.2" level="project" />
-    <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-api:1.7.2" level="project" />
+    <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-api:1.7.5" level="project" />
+    <orderEntry type="library" name="Leiningen: org.slf4j/slf4j-simple:1.7.5" level="project" />
     <orderEntry type="library" name="Leiningen: org.tobereplaced/lettercase:1.0.0" level="project" />
     <orderEntry type="library" name="Leiningen: org.yaml/snakeyaml:1.13" level="project" />
     <orderEntry type="library" name="Leiningen: pathetic:0.5.0" level="project" />

@@ -18,26 +18,40 @@
                  [secretary "1.2.3"]                        ; client-side routing
                  [metasoarous/oz "1.3.1"]                   ; Vega Charting Wrapper
 
+
                  ; Backend
+                 ; Logging
+                 [org.clojure/tools.logging "0.3.1"]
+                 [org.slf4j/slf4j-simple "1.7.5"]
+                 ;             [log4j/log4j "1.2.17" :exclusions [javax.mail/mail
+                 ;                                  javax.jms/jms
+                 ;                                   com.sun.jdmk/jmxtools
+                 ;                                   com.sun.jmx/jmxri       ]]
+
+
+                 [mount "0.1.11"]                           ;start/stop component
                  [ring "1.7.0"]
                  [ring/ring-core "1.7.0"]
                  [ring/ring-devel "1.7.0"]
-                 [ring/ring-jetty-adapter "1.7.0"]; needs to match compojure version
+                 [ring/ring-jetty-adapter "1.7.0"]          ; needs to match compojure version
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-codec "1.1.1"]
-                 [compojure "1.6.1"] ; Routing
+                 [compojure "1.6.1"]                        ; Routing
                  [metosin/compojure-api "1.1.10"]
-                 [cheshire "5.8.0"] ; JSON encoding
+                 [cheshire "5.8.0"]                         ; JSON encoding
+
+                 ; our project
                  [clojurewerkz/machine_head "1.0.0"]        ; MQTT
                  [capacitor "0.6.0"]                        ; InfluxDB
                  [jarohen/chime "0.2.2"]                    ; Scheduler
 
-]
+                 ]
 
   :plugins [
             [lein-cljsbuild "1.1.7"]
             [lein-ring "0.9.7"]
             [lein-figwheel "0.5.17"]
+            ;   [org.slf4j/slf4j-log4j12 "1.7.9"]
             ]
 
   :ring {
@@ -48,6 +62,9 @@
   :min-lein-version "2.5.3"
 
   :source-paths ["src/clj" "src/cljs"]
+
+
+  :main arduino.app
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 

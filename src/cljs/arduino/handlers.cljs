@@ -1,7 +1,8 @@
 (ns arduino.handlers
   (:require [goog.net.ErrorCode :as errors]
             [ajax.core :refer [GET POST]]
-            [re-frame.core :refer [register-handler]]))
+            [re-frame.core :refer [register-handler]]
+            [arduino.config :refer [base-url]]))
 
 (println "Setting up event handlers..")
 
@@ -12,7 +13,7 @@
                     ;; kick off the GET, making sure to supply a callback for success and failure
                     (println ":request-data..")
                     (GET
-                      "http:// arduino.hoertlehner.com/api/topics"
+                      (str "http://" base-url "/api/topics" )
                       {:handler       #(re-frame.core/dispatch [:process-data %1]) ;; further dispatch !!
                        :error-handler #(re-frame.core/dispatch [:bad-response %1])}) ;; further dispatch !!
 
@@ -32,7 +33,7 @@
                     ;; kick off the GET, making sure to supply a callback for success and failure
                     (println ":set-data..")
                     (GET
-                      "http:// arduino.hoertlehner.com/api/action"
+                      (str "http://" base-url "/api/action" )
                       {:params        {:topic (get data 1)
                                        :payload  (get data 2)}
                        :handler       #(re-frame.core/dispatch [:post-success %1]) ;; further dispatch !!
@@ -48,7 +49,7 @@
                     ;; kick off the GET, making sure to supply a callback for success and failure
                     (println ":request-history: "  (get data 1))
                     (GET
-                      (str "http:// arduino.hoertlehner.com/api/history?topic=" (get data 1))
+                      (str "http://" base-url "/api/history?topic=" (get data 1))
                       {:handler       #(re-frame.core/dispatch [:process-history (get data 1) %1]) ;; further dispatch !!
                        :error-handler #(re-frame.core/dispatch [:bad-response %1])}) ;; further dispatch !!
 

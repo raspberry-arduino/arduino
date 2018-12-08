@@ -1,5 +1,9 @@
 (ns arduino.web
   (:require
+
+    [mount.core :refer [defstate]]
+    [clojure.tools.logging :refer [info]]
+
     [schema.core :as s]
 
     [ring.util.response :as response]
@@ -12,18 +16,12 @@
     [compojure.api.sweet :as sweet]
     [cheshire.core :refer :all]
 
+    [arduino.config :refer [config]]
+    [arduino.db :as db]
     [arduino.mqtt :as mqtt]
     [arduino.influx :as influx]
-   ))
-
-;(println "setting up routes..")
-
-;(println "interesting topics are: " (mqtt/get-topics))
-
-; automatically subscribe to topics of interest
-;(mqtt/subscribe-topics-of-interest)
-
-;(mqtt/subscribe "test2")
+   )
+  (:use ring.adapter.jetty))
 
 
 (defroutes app-routes
@@ -43,7 +41,7 @@
 
                             (sweet/GET "/topics" []
                                        :query-params []
-                                       (ring.util.http-response/ok (mqtt/get-topics)))
+                                       (ring.util.http-response/ok (db/get-topics)))
 
                             (sweet/GET "/action" []
                                        :query-params [topic :- s/Str ,  {payload :- s/Str nil}]
@@ -62,9 +60,7 @@
 
 
 
-(def app ( let [xx (mqtt/subscribe-topics-of-interest)
-                yy (mqtt/start-timers)]
-           (wrap-defaults app-routes site-defaults)) )
+(def app (wrap-defaults app-routes site-defaults))
 
 ;(def app (wrap-defaults app-routes (assoc-in site-defaults [:security :anti-forgery] false)))
 
@@ -72,5 +68,46 @@
 ;; but it's very good to know about
 ;(def dev-app (wrap-reload (wrap-defaults #'app-routes site-defaults)))
 
-;(println "setting up routes..done.");
+
+(defn- start-server
+  ([handler port]
+   (run-jetty
+     (->
+       handler
+       ;wrap-swank
+       ;wrap-stacktrace
+       )
+     {:port port, :join? false})))
+
+
+(defn start-web [port]
+  (info "starting web server..")
+  (let [app (wrap-defaults app-routes site-defaults)
+        server (start-server app port)
+        ]
+    server
+    )
+  )
+
+(defn stop-web [server]
+  (info "stopping web server..")
+   (.stop server))
+
+
+(defstate web-server
+          :start (start-web (get-in config [:web :port]))
+          :stop  (stop-web web-server) )
+
+
+(comment
+
+  (serve* app 7000)
+
+  (stop-server)
+
+  )
+
+
+
+
 
