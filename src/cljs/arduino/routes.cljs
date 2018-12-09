@@ -6,7 +6,10 @@
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             [reagent.core :as reagent]
-            [arduino.views :as views]))
+            [arduino.views :as views]
+            [arduino.views.help :refer [help] ]
+
+            ))
 
 
 (defn hook-browser-navigation! []
@@ -33,8 +36,8 @@
   (defroute "/help" []
             (swap! app-state assoc :page :help))
 
-  (defroute "/shit" []
-            (swap! app-state assoc :page :shit))
+  (defroute "/settings" []
+            (swap! app-state assoc :page :settings))
 
   (hook-browser-navigation!))
 
@@ -45,10 +48,10 @@
   [views/home])
 
 (defmethod current-page :help []
-  [views/help])
+  [help])
 
-(defmethod current-page :shit []
-  [views/shit])
+(defmethod current-page :settings []
+  [views/settings])
 
 (defmethod current-page :default []
   [:div ])

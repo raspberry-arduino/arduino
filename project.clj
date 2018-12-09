@@ -50,8 +50,9 @@
   :plugins [
             [lein-cljsbuild "1.1.7"]
             [lein-ring "0.9.7"]
+
+            [figwheel-sidecar "0.5.17" :exclusions [org.clojure/tools.nrepl]]
             [lein-figwheel "0.5.17"]
-            ;   [org.slf4j/slf4j-log4j12 "1.7.9"]
             ]
 
   :ring {
@@ -68,13 +69,23 @@
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 
-  :figwheel {:css-dirs ["resources/public/css"]}
+  :figwheel {:css-dirs ["resources/public/css"]
+             :nrepl-port 7002}
 
+  ;; setting up nREPL for Figwheel and ClojureScript dev
+  ;; Please see:
+  ;; https://github.com/bhauman/lein-figwheel/wiki/Using-the-Figwheel-REPL-within-NRepl
   :profiles
   {:dev
-   {:dependencies [[binaryage/devtools "0.9.10"]]
+   {:dependencies [
+                   [binaryage/devtools "0.9.10"]
+                   [com.cemerick/piggieback "0.2.1"]
+                   [figwheel-sidecar "0.5.17" :exclusions [org.clojure/tools.nrepl]]
 
-    :plugins      [[lein-figwheel "0.5.16"]]}
+                   ]
+
+    :plugins      [[lein-figwheel "0.5.16"]]
+    }
    :prod { }
    }
 
@@ -104,4 +115,6 @@
 
 
     ]}
+
+
   )

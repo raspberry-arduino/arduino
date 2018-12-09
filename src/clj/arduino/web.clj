@@ -10,6 +10,9 @@
     [ring.util.http-response :refer :all]
     [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
     [ring.middleware.reload :refer [wrap-reload]]
+    [ring.middleware.resource :refer [wrap-resource]]
+    [ring.middleware.file :refer [wrap-file]]
+
 
     [compojure.core :refer :all] ; [compojure.core :refer [defroutes routes]]
     [compojure.route :as route]
@@ -25,11 +28,11 @@
 
 
 (defroutes app-routes
-           ; (route/resources "/" {:root "public"})
+           ;(route/resources "/" {:root "public"})
+
            ;; NOTE: this will deliver your index.html
            (GET "/" [] (-> (response/resource-response "index.html" {:root "public"})
                            (response/content-type "text/html")))
-         ; (GET "/" [] (myviews/home-page (instruments/get-instruments)))
 
            (sweet/api
              (sweet/context "/api" []
@@ -60,9 +63,21 @@
 
 
 
-(def app (wrap-defaults app-routes site-defaults))
+; (def app (wrap-defaults app-routes site-defaults) )
 
 ;(def app (wrap-defaults app-routes (assoc-in site-defaults [:security :anti-forgery] false)))
+
+
+(def app
+  (-> app-routes
+      (wrap-defaults site-defaults)
+      (wrap-defaults (assoc-in site-defaults [:security :anti-forgery] false))
+      (wrap-resource "public")
+      (wrap-file "resources/public")
+      ;(wrap-content-type)
+      ;(wrap-not-modified)
+      ))
+
 
 ;; NOTE: wrap reload isn't needed when the clj sources are watched by figwheel
 ;; but it's very good to know about
@@ -82,11 +97,7 @@
 
 (defn start-web [port]
   (info "starting web server..")
-  (let [app (wrap-defaults app-routes site-defaults)
-        server (start-server app port)
-        ]
-    server
-    )
+  (start-server app port)
   )
 
 (defn stop-web [server]

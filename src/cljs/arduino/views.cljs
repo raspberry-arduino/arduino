@@ -9,6 +9,8 @@
    [goog.string :as gstring]
    [goog.string.format]
 
+   [arduino.views.menu :refer [menu]]
+
    ))
 
 ;; define a function for generating some dummy data
@@ -182,57 +184,15 @@
 
      ]]]))
 
-(defn menu [name]
-
-  [mui/paper {:square true
-              :style  {:background-color mui/secondary
-                       ;; :text-align       :center
-                       :padding          "1em 2em 1em 2em"}}
-
-  [mui/grid {:container   true
-             :align-items :center
-             :spacing     16
-             :xs 12}
-
-   [mui/grid {:item true :xs 6}
-    [mui/typography {:variant :display2
-                     :style   {:color :white}}
-     "Hydroponics 4 U"]]
-
-   [mui/grid {:item true :xs 6}
-    [mui/typography {:variant :title
-                     :style   {:color   :white}}
-     name]]
-
-
-   [mui/grid {:item true :xs 4}
-    [mui/typography {:variant :title
-                     :style   {:color   :white}}
-     [:a {:href "#/"} "sensors"]]]
-
-   [mui/grid {:item true :xs 4}
-    [mui/typography {:variant :title
-                     :style   {:color   :white}}
-     [:a {:href "#/help"} "help"]]]
-
-   [mui/grid {:item true :xs 4}
-    [mui/typography {:variant :title
-                     :style   {:color   :white}}
-     [:a {:href "#/shit"} "shit"]]]
-
-
-
-   ]
-   ])
 
 
 
 
-(defn shit []
+(defn settings []
   (let [saying (re-frame/subscribe [::subs/saying])
         bongo "bongo"]
     [:div
-     [menu "Shit"]
+     [menu "Settings"]
      [mui/tooltip {:title @saying
                    :on-open (fn [] ( println "tooltip onOpen"))
                    :on-close (fn [] (println "tooltip onClose")) }
@@ -244,19 +204,7 @@
    [main-panel]
    ])
 
-(defn help []
-  [:div
-   [menu "Help"]
-   [:h1 "Help"
-    [:p "Arduino based Hydroponics by TB and the gang." ]
-    [:p "Sensors and Regulation."]
-    [:ol
-     [:li "Mao loves Clojure."]
-     [:li "The cat loves to sleep."]
-     [:li "TB is an C++ Ninja."]
-     ]
-    ]
-   ])
+
 
 
 
