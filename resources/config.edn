@@ -14,5 +14,7 @@
 
   :web { :port 7000 }
 
+  :db { :host "memory" :port "XXXX"}
+
  }
 

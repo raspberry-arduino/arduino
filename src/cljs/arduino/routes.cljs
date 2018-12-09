@@ -25,10 +25,11 @@
 
 
 
-
-
+; ROUTE-DB
 
 (def app-state (reagent/atom {}))
+
+; ROUTES URL <=> ROUTE-DB
 
 (defn app-routes []
   (secretary/set-config! :prefix "#")

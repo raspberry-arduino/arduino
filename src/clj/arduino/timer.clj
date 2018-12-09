@@ -48,6 +48,7 @@
   (if-not (nil? timer-data)
           (do (stop-timer-if-running (keyword name) )
               (info "starting timer " name timer-data)
+              (db/save-timer-settings (keyword name) timer-data)
               (save-timer (keyword name)  (scheduler/start-cycle name (:on timer-data) (:off timer-data) timer-action)))))
 
 
@@ -61,12 +62,14 @@
 
 
 (defn start-timers []
+  "starts all timers that we have in the db"
   (let [topics (db/get-topics)]
     (info "starting cycle timers..")
     (run! #(start-timer  (name (get % 0))  (:timer (get % 1))  ) topics)))
 
 
 (defn stop-running-timers []
+  "stop all running timers"
   (let [running-timers @timers-db
         xx (println "stopping " (count running-timers) "running timers..")]
    (map #(stop-timer (get % 0) ) running-timers  )
@@ -75,6 +78,7 @@
 
 
 (defn running-timer-info []
+  "get information on running timers (for frontend display)"
   (let [running-timers @timers-db
         timer-array (map #(get % 1) running-timers)
         short-array (map #(select-keys % [:name]) timer-array)

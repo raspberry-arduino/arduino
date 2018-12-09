@@ -76,7 +76,7 @@
 
                             ))
 
-           (route/not-found "<h1> Sorry! Page not found.</h1>"))
+           (route/not-found "<h1> Sorry! Page not found! </h1>"))
 
 
 
