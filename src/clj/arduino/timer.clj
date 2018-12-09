@@ -74,6 +74,14 @@
     ))
 
 
+(defn running-timer-info []
+  (let [running-timers @timers-db
+        timer-array (map #(get % 1) running-timers)
+        short-array (map #(select-keys % [:name]) timer-array)
+        ]
+    short-array
+     ))
+
 ; SERVICE
 
 
@@ -86,14 +94,18 @@
   ; test the removing of stopped timers
   (remove-timer :status)
 
+  (println @timers-db)
+  (println "running timer info: " (running-timer-info))
 
+  ; start/stop one timer
   (start-timer "tyron" {:on 10 :off 5} )
+  (stop-timer :tyron)
 
   (start-timers)
-  (println @timers-db)
+
   (stop-timer :status)
   (stop-running-timers)
 
-  (stop-timer :esteban)
+
 
   )

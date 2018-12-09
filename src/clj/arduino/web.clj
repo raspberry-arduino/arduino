@@ -70,6 +70,10 @@
                                     {:timer name :result "timer was started"}
                                     ) ))
 
+                            (sweet/GET "/timer-running" []
+                              :query-params []
+                              (ring.util.http-response/ok (timer/running-timer-info)))
+
                             ))
 
            (route/not-found "<h1> Sorry! Page not found.</h1>"))

@@ -58,8 +58,6 @@
 
 
 
-
-
 ; SERVICE
 
 (defn start-mqtt-subscriptions []
