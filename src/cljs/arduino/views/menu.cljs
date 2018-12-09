@@ -13,58 +13,41 @@
 (defn menu [name]
 
   [mui/paper {:square true
-              :style  {:background-color mui/secondary
-                       ;; :text-align       :center
-                       :padding          "1em 2em 1em 2em"}}
+              :style  {:padding "1em 2em 1em 2em"
+                      :margin-bottom "2em"
+                      :a {
+                        :color "white !important"
+                        :text-decoration "none !important"
+                      }
+                }}
+    [mui/app-bar
+      [mui/tool-bar
+        [mui/typography {:variant :display2
+                         :style   {:color :white}}
+         "Hydroponics 4 U"]
 
-   [mui/grid {:container   true
-              :align-items :center
-              :spacing     16
-              :xs 12}
+        [mui/button {:variant :title
+                        :style   {:color   :white}}
+          [:a {:href "#/"} "dashboard"]]
+        [mui/button {:variant :title
+                        :style   {:color   :white}}
+          [:a {:href "#/charts"} "charts"]]
 
-    [mui/grid {:item true :xs 6}
-     [mui/typography {:variant :display2
-                      :style   {:color :white}}
-      "Hydroponics 4 U"]]
+        [mui/button {:variant :title
+                        :style   {:color   :white}}
+          [:a {:href "#/help"} "help"]]
 
-    [mui/grid {:item true :xs 6}
-     [mui/typography {:variant :title
-                      :style   {:color   :white}}
-      name]]
+        [mui/button {:variant :title
+                        :style   {:color   :white}}
+          [:a {:href "#/timers"} "timers"]]
 
+        [mui/button {:variant :title
+                        :style   {:color   :white}}
+          [:a {:href "#/settings"} "settings"]]
 
-    [mui/grid {:item true :xs 2}
-     [mui/typography {:variant :title
-                      :style   {:color   :white}}
-      [:a {:href "#/"} "dashboard"]]]
-
-    [mui/grid {:item true :xs 2}
-     [mui/typography {:variant :title
-                      :style   {:color   :white}}
-      [:a {:href "#/charts"} "charts"]]]
-
-    [mui/grid {:item true :xs 2}
-     [mui/typography {:variant :title
-                      :style   {:color   :white}}
-      [:a {:href "#/timers"} "timers"]]]
-
-
-    [mui/grid {:item true :xs 2}
-     [mui/typography {:variant :title
-                      :style   {:color   :white}}
-      [:a {:href "#/help"} "help"]]]
-
-    [mui/grid {:item true :xs 2}
-     [mui/typography {:variant :title
-                      :style   {:color   :white}}
-      [:a {:href "#/settings"} "settings"]]]
-
-    [mui/grid {:item true :xs 2}
-     [mui/typography {:variant :title
-                      :style   {:color   :white}}
-      [:a {:href "#/simulator"} "simulator"]]]
-
-
-
+        [mui/button {:variant :title
+                        :style   {:color   :white}}
+          [:a {:href "#/simulator"} "simulator"]]
+      ]
     ]
-   ])
+  ])
