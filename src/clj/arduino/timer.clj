@@ -18,21 +18,31 @@
 (defn save-timer
   "saves a timer finish function"
   [topic timer-function]
-  (swap! timers-db assoc-in [topic ] timer-function)
-  ;(swap! topics assoc-in [topic :time ] (t/now))
-  )
+  (swap! timers-db assoc-in [topic ] timer-function))
 
 (defn remove-timer [name]
   (swap! timers-db dissoc name))
 
+(defn set-current-value
+  "saves the current-value of a timer"
+  [topic current-value]
+  (if-not (nil? topic)
+     (swap! timers-db assoc-in [topic :current-value ] current-value))
+  )
 
 
 ; SCHEDULER ON/OFF cycles for mqtt variables.
 
+(defn send-mqtt [name data]
+  (set-current-value (keyword name) data)
+  (mqtt/do-action name data)
+  )
+
+
 (defn timer-action [time name data]
   "when timer fires on/off - forward new state to mqtt"
   (info time "timer-action " name data)
-  (if data (mqtt/do-action name "1") (mqtt/do-action name "0")))
+  (if data (send-mqtt name "1") (send-mqtt name "0")))
 
 
 (defn stop-timer-if-running [name]
@@ -77,11 +87,20 @@
     ))
 
 
+(defn timer-summary [timer-data]
+  (assoc {} :name (:name timer-data)
+            :current-value (:current-value timer-data)
+            :on-next (scheduler/next-upcoming (:on-seq timer-data))
+            :off-next (scheduler/next-upcoming (:off-seq timer-data))
+            ))
+
+
 (defn running-timer-info []
   "get information on running timers (for frontend display)"
   (let [running-timers @timers-db
         timer-array (map #(get % 1) running-timers)
-        short-array (map #(select-keys % [:name]) timer-array)
+        ;short-array (map #(select-keys % [:name :current-value]) timer-array)
+        short-array (map timer-summary timer-array)
         ]
     short-array
      ))
@@ -95,11 +114,19 @@
 
 (comment
 
-  ; test the removing of stopped timers
+  ; timer-db tests
+  ; removing stopped timers
   (remove-timer :status)
+  ; set current value
+  (set-current-value :alice 5)
 
+  ; this will block the repl because of infinite sequences
   (println @timers-db)
+
+  ; info for the web client
   (println "running timer info: " (running-timer-info))
+
+  (running-timer-info)
 
   ; start/stop one timer
   (start-timer "tyron" {:on 10 :off 5} )

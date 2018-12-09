@@ -45,8 +45,9 @@
         xx (println name " on times: " (take 10 on-seq))
         xx (println name " off times: " (take 10 off-seq)) ]
     {:name name
-     :on-seq  "on"                                          ;on-seq
-     :off-seq "off"                                         ;off-seq
+     :current-value ""
+     :on-seq  on-seq
+     :off-seq off-seq
      :finish end
      }))
 
@@ -56,6 +57,9 @@
     (info "stop-cycle: " name)
     (finish)))
 
+
+(defn next-upcoming [time-sequence]
+  (first (drop-while #(t/after?  (t/now)  %) time-sequence)))
 
 (comment ;********************************************************
 
@@ -70,8 +74,9 @@
                          (withTime 20 0 0 0))
                      (-> 1 t/days)))
 
-
-  (take 50 (run-every 240) )
+  (type (doall (take 1 (run-every 240) )) )
+  (take 5 (run-every 240) )
+  (type (first (run-every 240) ))
   (take 10 (run-for (run-every 60) 7 ))
   (take 10 (run-on-off 60 7) )
 
@@ -81,5 +86,13 @@
 
   (def running-timer (start-cycle "light55" 60 6 demo) )
   (stop-cycle running-timer)
+
+
+  (t/after? (t/date-time 1986 10) (t/date-time 1986 9))
+
+  (next-upcoming (run-every 10))
+
+
+
 
   );********************************************************
