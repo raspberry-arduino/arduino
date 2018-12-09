@@ -28,6 +28,14 @@ lein deps :tree
    java -jar target/arduino-0.1.0-SNAPSHOT-standalone.jar
 ```
 
+## REPL
+lein repl
+Load a file to the repl and use its functions:
+    (require '[arduino.app])
+    (ns arduino.app)
+    (mount/start)
+
+
 
 MQTT Broker: (Needs to run on linux server, separately)
 http://www.steves-internet-guide.com/install-mosquitto-linux/

@@ -57,36 +57,17 @@
        (run! #(subscribe (name (get % 0))) topics ))))
 
 
-; SCHEDULER ON/OFF cycles for mqtt variables.
 
-
-(defn timer-action [time name data]
-  (info time "timer-action " name data)
-  (if data (do-action name "1") (do-action name "0")))
-
-
-(defn start-timer [name timer-data]
-  (if-not (nil? timer-data) (do (info "starting timer " name timer-data)
-                                (scheduler/start-cycle name (:on timer-data) (:off timer-data) timer-action)
-                              )))
-
-
-
-(defn start-timers []
-  (let [topics (db/get-topics)]
-    (info "starting cycle timers..")
-    (run! #(start-timer  (name (get % 0))  (:timer (get % 1))  ) topics)))
 
 
 ; SERVICE
 
-(defn start-mqtt-actions []
-  (info "starting mqtt actions..")
-  (subscribe-topics-of-interest)
-  (start-timers))
+(defn start-mqtt-subscriptions []
+  (info "starting mqtt subscriptions ..")
+  (subscribe-topics-of-interest))
 
 (defstate mqtt-actions
-          :start (start-mqtt-actions))
+          :start (start-mqtt-subscriptions))
 
 
 

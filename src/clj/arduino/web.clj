@@ -23,6 +23,7 @@
     [arduino.db :as db]
     [arduino.mqtt :as mqtt]
     [arduino.influx :as influx]
+    [arduino.timer :as timer]
    )
   (:use ring.adapter.jetty))
 
@@ -55,6 +56,19 @@
                               :query-params [topic :- s/Str ]
                               (ring.util.http-response/ok (influx/history topic)))
 
+
+                            (sweet/GET "/timer-stop" []
+                              :query-params [name :- s/Str ]
+                              (ring.util.http-response/ok
+                                (do (timer/stop-timer (keyword name))
+                                    {:timer name :result "timer is stopped"})))
+
+                            (sweet/GET "/timer-start" []
+                              :query-params [name :- s/Str ,  on :- s/Int , off :- s/Int ]
+                              (ring.util.http-response/ok
+                                (do (timer/start-timer name {:on on :off off} )
+                                    {:timer name :result "timer was started"}
+                                    ) ))
 
                             ))
 

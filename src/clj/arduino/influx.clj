@@ -42,12 +42,18 @@
   ; influx-conn is created by mount/start
 
   (type influx-conn)
+  (println influx-conn)
   (influx/ping influx-conn)
   (influx/version influx-conn)
   (influx/list-dbs influx-conn)
   (influx/db-query influx-conn "SHOW SERIES" true)
   (influx/db-query influx-conn "SELECT * FROM mqtt_consumer WHERE time > now() - 24h" true)
   (influx/db-query influx-conn "SELECT MAX(value) FROM mqtt_consumer" true)
+
+
+  (influx/db-query influx-conn "SELECT used_percent FROM mem WHERE time > now() - 5h" true)
+  (influx/db-query influx-conn "SELECT * FROM mqtt_consumer WHERE time > now() - 24h" true)
+
 
 
   (history "light1")
