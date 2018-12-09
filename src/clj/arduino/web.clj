@@ -12,12 +12,17 @@
     [ring.middleware.reload :refer [wrap-reload]]
     [ring.middleware.resource :refer [wrap-resource]]
     [ring.middleware.file :refer [wrap-file]]
-
+    [ring.middleware.json :as mid-json]
 
     [compojure.core :refer :all] ; [compojure.core :refer [defroutes routes]]
     [compojure.route :as route]
     [compojure.api.sweet :as sweet]
     [cheshire.core :refer :all]
+
+    [cognitect.transit :as transit]
+    [muuntaja.core :as m]
+    [muuntaja.format.transit :as mformats]
+
 
     [arduino.config :refer [config]]
     [arduino.db :as db]
@@ -27,6 +32,40 @@
    )
   (:use ring.adapter.jetty))
 
+; https://stackoverflow.com/questions/46859881/clojure-encode-joda-datetime-with-ring-json
+; 2018 12 09 fh: for some reason the web server seems not to use cheshire, but transport, so this fix does not work
+(extend-protocol cheshire.generate/JSONable
+  org.joda.time.DateTime
+  (to-json [dt gen]
+    (cheshire.generate/write-string gen (str dt))))
+
+
+
+(comment
+
+  ; transit workaround
+  (def joda-time-writer
+    (transit/write-handler
+      (constantly "m")
+      (fn [v] (-> ^org.joda.time.ReadableInstant v .getMillis))
+      (fn [v] (-> ^org.joda.time.ReadableInstant v .getMillis .toString))))
+
+  (def wrap-format-options
+    (update
+      m/default-options
+      :formats
+      merge
+      {"application/transit+json"
+       {:decoder [(partial mformats/make-transit-decoder :json)]
+        :encoder [#(mformats/make-transit-encoder
+                     :json
+                     (merge
+                       %
+                       {:handlers {org.joda.time.DateTime joda-time-writer}}))]}}))
+
+
+
+  )
 
 (defroutes app-routes
            ;(route/resources "/" {:root "public"})
@@ -88,6 +127,7 @@
 
 (def app
   (-> app-routes
+      (mid-json/wrap-json-response)
       (wrap-defaults site-defaults)
       (wrap-defaults (assoc-in site-defaults [:security :anti-forgery] false))
       (wrap-resource "public")

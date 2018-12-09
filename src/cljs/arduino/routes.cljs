@@ -11,6 +11,7 @@
             [arduino.views.settings :refer [settings-page] ]
             [arduino.views.simulator :refer [simulator-page] ]
             [arduino.views.chart :refer [chart-page] ]
+            [arduino.views.timers :refer [timers-page] ]
 
             ))
 
@@ -46,6 +47,9 @@
   (defroute "/charts" []
             (swap! app-state assoc :page :charts))
 
+  (defroute "/timers" []
+            (swap! app-state assoc :page :timers))
+
 
   (defroute "/settings" []
             (swap! app-state assoc :page :settings))
@@ -69,6 +73,9 @@
 
 (defmethod current-page :simulator []
   [simulator-page])
+
+(defmethod current-page :timers []
+  [timers-page])
 
 (defmethod current-page :default []
   [:div ])

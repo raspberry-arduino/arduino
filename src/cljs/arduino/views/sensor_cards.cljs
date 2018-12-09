@@ -59,7 +59,7 @@
                  :spacing     16}
 
        (for [topic @data]
-         [sensor-card (get topic 0) ( format-digits (:valu (get topic 1)) (:format (get topic 1))  )]) ; topic 1 is the data strucutre, topic 0 is the name of the data
+         [sensor-card (get topic 0) ( format-digits (get-in (get topic 1) ["valu"]) (get-in  (get topic 1) ["format"])  )]) ; topic 1 is the data strucutre, topic 0 is the name of the data
 
        ;[sensor-card "mao" 1.55]
        ;[sensor-card "tb" "sir"]

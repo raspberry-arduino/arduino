@@ -43,6 +43,11 @@
                       :style   {:color   :white}}
       [:a {:href "#/charts"} "charts"]]]
 
+    [mui/grid {:item true :xs 2}
+     [mui/typography {:variant :title
+                      :style   {:color   :white}}
+      [:a {:href "#/timers"} "timers"]]]
+
 
     [mui/grid {:item true :xs 2}
      [mui/typography {:variant :title

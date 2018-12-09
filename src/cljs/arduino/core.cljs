@@ -2,10 +2,10 @@
   (:require
    [reagent.core :as reagent]
    [re-frame.core :as re-frame]
+
    [arduino.events :as events]
    [arduino.views.core :as views]
    [arduino.config :as config]
-   [arduino.handlers :as handlers]
    [arduino.routes :as routes]
    ))
 
@@ -34,4 +34,5 @@
   (dev-setup)
   ;(mount-root)
   (mount-routes)
-  (handlers/xxx))
+  ;(handlers/xxx)
+  )

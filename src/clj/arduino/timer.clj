@@ -10,6 +10,7 @@
 
                                ))
 
+
 ; STATE OF RUNNING TIMERS
 
 ; currently running timers
@@ -27,14 +28,45 @@
   "saves the current-value of a timer"
   [topic current-value]
   (if-not (nil? topic)
-     (swap! timers-db assoc-in [topic :current-value ] current-value))
+    (swap! timers-db assoc-in [topic :current-value ] current-value))
   )
+
+(defn get-timer-data [name]
+  (let [timers-running @timers-db
+        timer (name timers-running)
+        ]
+    timer))
+
+
+
+
+; SUMMARIZE TIMER-INFORMATION
+
+(defn timer-summary [timer-data]
+  (assoc {} :name (:name timer-data)
+            :current-value (:current-value timer-data)
+            :on-next (scheduler/next-upcoming (:on-seq timer-data))
+            :off-next (scheduler/next-upcoming (:off-seq timer-data))
+            ))
+
+
+(defn running-timer-info []
+  "get information on running timers (for frontend display)"
+  (let [running-timers @timers-db
+        timer-array (map #(get % 1) running-timers)
+        ;short-array (map #(select-keys % [:name :current-value]) timer-array)
+        short-array (map timer-summary timer-array)
+        ]
+    short-array
+    ))
+
 
 
 ; SCHEDULER ON/OFF cycles for mqtt variables.
 
 (defn send-mqtt [name data]
   (set-current-value (keyword name) data)
+  (db/save-timer-status (keyword name) (timer-summary (get-timer-data (keyword name))) )
   (mqtt/do-action name data)
   )
 
@@ -59,7 +91,9 @@
           (do (stop-timer-if-running (keyword name) )
               (info "starting timer " name timer-data)
               (db/save-timer-settings (keyword name) timer-data)
-              (save-timer (keyword name)  (scheduler/start-cycle name (:on timer-data) (:off timer-data) timer-action)))))
+              (save-timer (keyword name)  (scheduler/start-cycle name (:on timer-data) (:off timer-data) timer-action))
+              (db/save-timer-status (keyword name)  (timer-summary (get-timer-data (keyword name) )) )
+              )))
 
 
 (defn stop-timer [name]
@@ -87,23 +121,6 @@
     ))
 
 
-(defn timer-summary [timer-data]
-  (assoc {} :name (:name timer-data)
-            :current-value (:current-value timer-data)
-            :on-next (scheduler/next-upcoming (:on-seq timer-data))
-            :off-next (scheduler/next-upcoming (:off-seq timer-data))
-            ))
-
-
-(defn running-timer-info []
-  "get information on running timers (for frontend display)"
-  (let [running-timers @timers-db
-        timer-array (map #(get % 1) running-timers)
-        ;short-array (map #(select-keys % [:name :current-value]) timer-array)
-        short-array (map timer-summary timer-array)
-        ]
-    short-array
-     ))
 
 ; SERVICE
 
@@ -122,6 +139,8 @@
 
   ; this will block the repl because of infinite sequences
   (println @timers-db)
+  ; this will also block the repl because it gives full timer data
+  (get-timer-data :tyron)
 
   ; info for the web client
   (println "running timer info: " (running-timer-info))
@@ -129,7 +148,7 @@
   (running-timer-info)
 
   ; start/stop one timer
-  (start-timer "tyron" {:on 10 :off 5} )
+  (start-timer "tyron" {:on 2 :off 1} )
   (stop-timer :tyron)
 
   (start-timers)

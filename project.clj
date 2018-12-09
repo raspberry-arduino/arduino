@@ -36,9 +36,12 @@
                  [ring/ring-jetty-adapter "1.7.0"]          ; needs to match compojure version
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-codec "1.1.1"]
+                 [ring/ring-json "0.4.0"]
                  [compojure "1.6.1"]                        ; Routing
                  [metosin/compojure-api "1.1.10"]
                  [cheshire "5.8.0"]                         ; JSON encoding
+                 [metosin/jsonista "0.2.2"]                 ; metosin json encoding
+                 [metosin/muuntaja "0.6.2"]                 ;date encoding for transit
 
                  ; our project
                  [clojurewerkz/machine_head "1.0.0"]        ; MQTT

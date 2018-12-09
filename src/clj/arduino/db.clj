@@ -41,6 +41,16 @@
   (swap! topics assoc-in [topic :timer ] timer-data)
   )
 
+(defn save-timer-status
+  "persists the timer-status"
+  [topic timer-status]
+  (info "saving timer status [" topic "] status: " timer-status)
+  (swap! topics assoc-in [topic :timer-status ] timer-status)
+  )
+
+
+
+
 ; SERVICE (MOUNT)
 
 (defn db-start []
