@@ -6,8 +6,11 @@
             [goog.events :as events]
             [goog.history.EventType :as EventType]
             [reagent.core :as reagent]
-            [arduino.views :as views]
-            [arduino.views.help :refer [help] ]
+            [arduino.views.core :refer [dashboard-page] ]
+            [arduino.views.help :refer [help-page] ]
+            [arduino.views.settings :refer [settings-page] ]
+            [arduino.views.simulator :refer [simulator-page] ]
+            [arduino.views.chart :refer [chart-page] ]
 
             ))
 
@@ -36,6 +39,13 @@
   (defroute "/help" []
             (swap! app-state assoc :page :help))
 
+  (defroute "/simulator" []
+            (swap! app-state assoc :page :simulator))
+
+  (defroute "/charts" []
+            (swap! app-state assoc :page :charts))
+
+
   (defroute "/settings" []
             (swap! app-state assoc :page :settings))
 
@@ -45,13 +55,19 @@
 (defmulti current-page #(@app-state :page))
 
 (defmethod current-page :home []
-  [views/home])
+  [dashboard-page])
 
 (defmethod current-page :help []
-  [help])
+  [help-page])
 
 (defmethod current-page :settings []
-  [views/settings])
+  [settings-page])
+
+(defmethod current-page :charts []
+  [chart-page])
+
+(defmethod current-page :simulator []
+  [simulator-page])
 
 (defmethod current-page :default []
   [:div ])

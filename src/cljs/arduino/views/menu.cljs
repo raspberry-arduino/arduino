@@ -33,20 +33,31 @@
       name]]
 
 
-    [mui/grid {:item true :xs 4}
+    [mui/grid {:item true :xs 2}
      [mui/typography {:variant :title
                       :style   {:color   :white}}
-      [:a {:href "#/"} "sensors"]]]
+      [:a {:href "#/"} "dashboard"]]]
 
-    [mui/grid {:item true :xs 4}
+    [mui/grid {:item true :xs 2}
+     [mui/typography {:variant :title
+                      :style   {:color   :white}}
+      [:a {:href "#/charts"} "charts"]]]
+
+
+    [mui/grid {:item true :xs 2}
      [mui/typography {:variant :title
                       :style   {:color   :white}}
       [:a {:href "#/help"} "help"]]]
 
-    [mui/grid {:item true :xs 4}
+    [mui/grid {:item true :xs 2}
      [mui/typography {:variant :title
                       :style   {:color   :white}}
       [:a {:href "#/settings"} "settings"]]]
+
+    [mui/grid {:item true :xs 2}
+     [mui/typography {:variant :title
+                      :style   {:color   :white}}
+      [:a {:href "#/simulator"} "simulator"]]]
 
 
 
