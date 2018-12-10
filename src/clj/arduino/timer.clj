@@ -101,8 +101,9 @@
     (if (nil? running-timer)
       (info "cannot stop timer " name "because it is not running")
       (do (info "stopping timer " name " .. ")
+          (db/save-timer-status (keyword name) nil)
           (scheduler/stop-cycle running-timer)
-           (remove-timer name)))))
+          (remove-timer name)))))
 
 
 (defn start-timers []
