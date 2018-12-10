@@ -74,7 +74,9 @@
                   :line-height    1.4
                   :letter-spacing "-0,025em"}
     :button
-                 {:font-weight 700}}
+                 {:font-weight 700
+                  :color "white"
+                  :text-decoration "none"}}
    :palette
    {:type      "dark"
     :primary   {:main primary}

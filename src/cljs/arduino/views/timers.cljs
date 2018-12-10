@@ -10,6 +10,11 @@
     [arduino.views.menu :refer [menu]]
     ))
 
+(defn atom-input [value]
+      [mui/text-field {:type "text"
+               :value @value
+               :on-change #(reset! value (-> % .-target .-value))}])
+
 (defn timers-table []
   (let [data (re-frame/subscribe [::subs/data])
         ;xx (println "rendering timers-table: " @data)
@@ -36,16 +41,24 @@
         [mui/table-body (for [topic @data]
                           (let [sensor-name (get topic 0)
                                 sensor-data (get topic 1)
+                                timer-on-minutes (atom (get-in sensor-data ["timer" "on"]))
+                                timer-off-minutes (atom (get-in sensor-data ["timer" "off"]))
                                 xx (println sensor-data)
                                 ]
-                            [mui/table-row {:key sensor-name }
+                             [mui/table-row {:key sensor-name }
                              [mui/table-cell sensor-name]
-                             [mui/table-cell (get-in sensor-data ["timer" "on"])]
-                             [mui/table-cell (get-in sensor-data ["timer" "off"])]
+                             [mui/table-cell [atom-input timer-on-minutes]]
+                             [mui/table-cell [atom-input timer-off-minutes]]
                              [mui/table-cell (get-in sensor-data ["timer-status"  "on-next" ])]
                              [mui/table-cell (get-in sensor-data [ "timer-status" "off-next" ])]
                              [mui/table-cell (get-in sensor-data [ "timer-status"  "current-value" ])]
-                             [mui/table-cell (get-in sensor-data [ "valu"])]]
+                             [mui/table-cell (get-in sensor-data [ "valu"])]
+                             [mui/table-cell [:input {:type "button"
+                                      :value "Start Timer!"
+                                      :on-click #(re-frame.core/dispatch [:timer-start sensor-name @timer-on-minutes @timer-off-minutes])}]]
+                              [mui/table-cell [:input {:type "button"
+                                       :value "Stop Timer!"
+                                       :on-click #(re-frame.core/dispatch [:timer-stop sensor-name])}]]]
                             )
 
 

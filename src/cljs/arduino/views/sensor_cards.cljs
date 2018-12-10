@@ -13,15 +13,6 @@
 
     ))
 
-
-
-
-
-
-
-
-
-
 (defn on-off-icon [name data]
   [mui/typography {:variant :title
                    :style   {:color   :yellow}}

@@ -14,6 +14,18 @@
  (fn [_ _]
    db/default-db))
 
+(reg-event-db
+ :timer-start
+ (fn [db data]
+    ;; kick off the GET, making sure to supply a callback for success and failure
+    (println ":starting-timer..")
+    (GET (str "http://" base-url "/api/timer-start" )
+         {:params        {:name  (get data 1)
+                          :on    (get data 2)
+                          :off   (get data 3)}
+          :handler       #(re-frame.core/dispatch [:post-success %1]) ;; further dispatch !!
+          :error-handler #(re-frame.core/dispatch [:post-failure %1])}) ;; further dispatch !!
+    (assoc db :loading? true)))
 
 (reg-event-db
   :request-data
@@ -93,4 +105,3 @@
 ; (println "setting data: " data)
 ;  (assoc db :command (get data 1))
 ; ) )
-
